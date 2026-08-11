@@ -27,6 +27,25 @@
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
+
+  #Banner-{{ section.id }} .banner__heading,
+  #Banner-{{ section.id }} .banner__text {
+    color: #342B22;
+  }
+
+  #Banner-{{ section.id }} .banner__buttons .button {
+    background-color: #6E6652;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  @media screen and (min-width: 750px) {
+    #Banner-{{ section.id }},
+    #Banner-{{ section.id }} .banner__media {
+      min-height: 640px;
+    }
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -131,11 +150,11 @@
               class="banner__heading inline-richtext {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}
             >
-              {{ block.settings.heading }}
+              {{ block.settings.heading | replace: ' for ', '<br>for ' }}
             </h2>
           {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-              <p>{{ block.settings.text }}</p>
+              <p>{{ block.settings.text | replace: ' Created ', '<br>Created ' }}</p>
             </div>
           {%- when 'buttons' -%}
             <div
