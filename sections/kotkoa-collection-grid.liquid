@@ -84,7 +84,7 @@
   .collection-grid__media {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 1.14 / 1;
+    height: 250px;
     background: #efefed;
   }
 
@@ -137,6 +137,11 @@
     .collection-grid {
       padding-top: calc(var(--collection-grid-padding-top) * 0.75);
       padding-bottom: calc(var(--collection-grid-padding-bottom) * 0.75);
+    }
+
+    .collection-grid__media {
+      height: auto;
+      aspect-ratio: 1.14 / 1;
     }
 
     .collection-grid__items {

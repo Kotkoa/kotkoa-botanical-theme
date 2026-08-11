@@ -332,6 +332,21 @@
       "view_all": "View all",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
+    "editorial_columns": {
+      "name": "Editorial columns",
+      "settings": {
+        "image": { "label": "Image" },
+        "image_alt": { "label": "Image description" },
+        "brand_heading": { "label": "Brand heading" },
+        "brand_text": { "label": "Brand text" },
+        "brand_link_label": { "label": "Brand link label" },
+        "brand_link": { "label": "Brand link" },
+        "library_heading": { "label": "Library heading" },
+        "library_text": { "label": "Library text" },
+        "library_link_label": { "label": "Library link label" },
+        "library_link": { "label": "Library link" }
+      }
+    },
     "collection_grid": {
       "name": "Collection grid",
       "settings": {

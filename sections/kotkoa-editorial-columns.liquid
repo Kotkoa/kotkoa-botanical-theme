@@ -1,0 +1,170 @@
+<section class="editorial-columns" {{ section.shopify_attributes }}>
+  <div class="page-width">
+    <div class="editorial-columns__grid">
+    <div class="editorial-columns__image">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '550, 750, 1100, 1600', sizes: '(min-width: 750px) 33vw, 100vw', alt: section.settings.image.alt }}
+      {% else %}
+        <img src="{{ 'botanical-world.png' | asset_url }}" width="1536" height="1024" loading="lazy" alt="{{ section.settings.image_alt | escape }}">
+      {% endif %}
+    </div>
+
+    <div class="editorial-columns__content editorial-columns__content--brand">
+      <h2 class="editorial-columns__heading">{{ section.settings.brand_heading | escape }}</h2>
+      <div class="editorial-columns__text rte">{{ section.settings.brand_text }}</div>
+      {% if section.settings.brand_link_label != blank %}
+        <a class="editorial-columns__link" href="{{ section.settings.brand_link }}">{{ section.settings.brand_link_label | escape }} <span aria-hidden="true">→</span></a>
+      {% endif %}
+    </div>
+
+    <div class="editorial-columns__content editorial-columns__content--library">
+      <span class="editorial-columns__motif" aria-hidden="true">❀</span>
+      <h2 class="editorial-columns__heading">{{ section.settings.library_heading | escape }}</h2>
+      <div class="editorial-columns__text rte">{{ section.settings.library_text }}</div>
+      {% if section.settings.library_link_label != blank %}
+        <a class="editorial-columns__link" href="{{ section.settings.library_link }}">{{ section.settings.library_link_label | escape }} <span aria-hidden="true">→</span></a>
+      {% endif %}
+    </div>
+  </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .editorial-columns__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .editorial-columns__image,
+  .editorial-columns__content {
+    height: 210px;
+  }
+
+  .editorial-columns__image {
+    overflow: hidden;
+    background: #efefed;
+  }
+
+  .editorial-columns__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .editorial-columns__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.6rem 3.5rem;
+    color: #342b22;
+  }
+
+  .editorial-columns__content--brand {
+    background: #f7f4ef;
+  }
+
+  .editorial-columns__content--library {
+    position: relative;
+    padding-top: 5rem;
+    background: #efeae4;
+  }
+
+  .editorial-columns__motif {
+    position: absolute;
+    top: 1.2rem;
+    left: 3.5rem;
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-size: 3.6rem;
+    line-height: 1;
+  }
+
+  .editorial-columns__heading {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .editorial-columns__text {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .editorial-columns__text p {
+    margin: 0;
+  }
+
+  .editorial-columns__link {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 1.2rem;
+    color: inherit;
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .editorial-columns__link span {
+    margin-left: 0.8rem;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    vertical-align: -0.1rem;
+  }
+
+  @media screen and (max-width: 989px) and (min-width: 750px) {
+    .editorial-columns__content {
+      padding: 1.6rem 2.4rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .editorial-columns__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .editorial-columns__image,
+    .editorial-columns__content {
+      height: auto;
+    }
+
+    .editorial-columns__image {
+      aspect-ratio: 3 / 2;
+    }
+
+    .editorial-columns__content {
+      padding: 4.5rem 3rem;
+    }
+
+    .editorial-columns__content--library {
+      padding-top: 7rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.editorial_columns.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "t:sections.editorial_columns.settings.image.label" },
+    { "type": "text", "id": "image_alt", "label": "t:sections.editorial_columns.settings.image_alt.label", "default": "Botanical artwork in a home" },
+    { "type": "inline_richtext", "id": "brand_heading", "label": "t:sections.editorial_columns.settings.brand_heading.label", "default": "The KOTKOA world" },
+    { "type": "richtext", "id": "brand_text", "label": "t:sections.editorial_columns.settings.brand_text.label", "default": "<p>KOTKOA is a botanical lifestyle brand created with a love for nature, art and slow living. We design products that bring beauty, calm and a touch of nature into your everyday life.</p>" },
+    { "type": "text", "id": "brand_link_label", "label": "t:sections.editorial_columns.settings.brand_link_label.label", "default": "Learn more about KOTKOA" },
+    { "type": "url", "id": "brand_link", "label": "t:sections.editorial_columns.settings.brand_link.label" },
+    { "type": "inline_richtext", "id": "library_heading", "label": "t:sections.editorial_columns.settings.library_heading.label", "default": "For designers & creators" },
+    { "type": "richtext", "id": "library_text", "label": "t:sections.editorial_columns.settings.library_text.label", "default": "<p>Explore our Design Library — curated patterns, illustrations and photos for your creative projects.</p>" },
+    { "type": "text", "id": "library_link_label", "label": "t:sections.editorial_columns.settings.library_link_label.label", "default": "Explore the library" },
+    { "type": "url", "id": "library_link", "label": "t:sections.editorial_columns.settings.library_link.label" }
+  ],
+  "presets": [{ "name": "t:sections.editorial_columns.name" }]
+}
+{% endschema %}
