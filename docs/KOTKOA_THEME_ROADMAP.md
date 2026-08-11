@@ -25,10 +25,13 @@ Build and launch a production-ready Shopify storefront based on Dawn and the vis
 - [x] The remote theme is named **Kotkoa Botanical Theme**.
 - [x] The theme is available in Shopify and through `shopify theme dev`.
 - [x] The local development preview responds at `http://127.0.0.1:9292`.
+- [x] The Dawn preset was expanded into local `current` settings so Shopify CLI renders typography correctly.
 - [x] The obsolete skeleton backup was deleted by owner request.
 - [x] `pi-chrome-dev-tools` 0.1.0 was installed globally for pi.
 - [x] Reload pi and verify that the `chrome_*` browser tools are available.
 - [x] Design decision: keep block 7 as a Trust strip and place a compact legal/navigation footer below it.
+- [x] Asset decision: continue development with neutral Shopify placeholders and replace them as production materials arrive.
+- [x] Provisional design-system baseline applied locally: Kotkoa palette, Playfair Display headings, Assistant body text, square controls, no shadows, and expanded spacing.
 
 ## Reference analysis
 
@@ -43,16 +46,15 @@ The desktop reference is a 1196 × 1315 px concept with:
 7. Four-item Trust strip.
 8. A compact footer to be added below the reference composition.
 
-Indicative palette extracted from the reference:
+Indicative palette extracted from the reference and provisional theme palette:
 
-- warm background: `#EFEAE4`;
+- primary warm background: `#F7F4EF`;
+- secondary warm background: `#EFEAE4`;
 - muted olive: `#6E6652`;
-- warm gray: `#B0A597`;
-- light sand: `#D2C6B5`;
 - lavender accent: `#CAB8C3`;
 - dark brown text: `#342B22`.
 
-These values are starting points and must be visually verified against original brand assets.
+These values are implemented as a provisional baseline and must be visually verified against original brand assets.
 
 ## Scope principles
 
@@ -63,6 +65,7 @@ These values are starting points and must be visually verified against original 
 - Translate all storefront UI text through Shopify locale files.
 - Avoid direct changes to the live theme until a milestone passes QA.
 - Treat the desktop screenshot as a visual direction, not as production-ready image assets.
+- Until production assets arrive, use neutral Shopify/CSS placeholders; do not crop or upscale imagery from the composite reference.
 
 ---
 
@@ -74,7 +77,7 @@ Collect production assets and distinguish design content from Shopify store data
 
 ## Tasks
 
-- [ ] Inventory every file in `design/` and record its intended use.
+- [x] Inventory every file in `design/` and record its intended use.
 - [ ] Obtain the Kotkoa logo in SVG or transparent high-resolution PNG.
 - [ ] Obtain separate desktop and mobile hero images.
 - [ ] Obtain images for Lavender, Lemon, Tropical, and Grape & Olive collections.
@@ -84,7 +87,7 @@ Collect production assets and distinguish design content from Shopify store data
 - [ ] Confirm shipping, return, payment, and support statements.
 - [ ] Confirm social channels and contact details.
 - [ ] Confirm font files and licensing, or choose Shopify-hosted alternatives.
-- [ ] Record missing assets and owners in this document or a linked content checklist.
+- [x] Record missing assets and owners in this document or a linked content checklist.
 
 ## Learning track
 
@@ -96,7 +99,7 @@ Collect production assets and distinguish design content from Shopify store data
 
 ### AC-0.1 — Asset inventory
 
-- [ ] **Given** the current design reference and brand materials, **when** the inventory is reviewed, **then** every visible image, icon, logo, and text area has a source file or is explicitly marked missing.
+- [x] **Given** the current design reference and brand materials, **when** the inventory is reviewed, **then** every visible image, icon, logo, and text area has a source file or is explicitly marked missing.
 
 ### AC-0.2 — Content ownership
 
@@ -126,6 +129,7 @@ Establish Dawn, Shopify CLI, local preview, validation, browser inspection, and 
 - [x] Rename it to **Kotkoa Botanical Theme**.
 - [x] Start and verify `shopify theme dev`.
 - [x] Run Shopify Theme Check.
+- [x] Expand the selected Dawn preset into local `current` settings for Shopify CLI compatibility.
 - [x] Install `pi-chrome-dev-tools`.
 - [x] Reload pi and run a browser smoke test against the local preview.
 - [ ] Define Git milestone/commit conventions.
@@ -173,11 +177,11 @@ Create global visual rules before styling individual homepage sections.
 - [ ] Define approved color schemes for warm neutral, olive accent, lavender accent, and dark contrast areas.
 - [ ] Choose the heading and body font families.
 - [ ] Configure typography scale and line heights.
-- [ ] Configure content width and section spacing.
-- [ ] Configure button, input, card, badge, and media styles.
+- [x] Configure content width and section spacing.
+- [x] Configure button, input, card, badge, and media styles.
 - [ ] Upload/configure the logo and favicon.
 - [ ] Define focus, hover, active, disabled, and error states.
-- [ ] Record design tokens and usage rules in this document or a linked design-system file.
+- [x] Record provisional design tokens and usage rules in this document or a linked design-system file.
 
 ## Learning track
 
