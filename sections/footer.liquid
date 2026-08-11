@@ -15,7 +15,47 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .footer__content-bottom {
+    border-top: 0;
+  }
+
+  .footer-block--newsletter .footer-block__heading {
+    font-family: var(--font-body-family);
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .footer-block--newsletter .field__input,
+  .footer-block--newsletter .field__label {
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+  }
+
   @media screen and (min-width: 750px) {
+    .footer__content-top {
+      position: relative;
+      z-index: 1;
+      height: 0;
+      padding-bottom: 0;
+      overflow: visible;
+    }
+
+    .footer__content-bottom {
+      min-height: 11rem;
+    }
+
+    .footer-block--newsletter {
+      justify-content: flex-end;
+      transform: translateY(2rem);
+    }
+
+    .footer-block--newsletter .footer-block__newsletter {
+      flex: 0 1 48rem;
+    }
+
     .footer {
       margin-top: {{ section.settings.margin_top }}px;
     }
