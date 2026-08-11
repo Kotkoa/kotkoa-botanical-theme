@@ -6,7 +6,8 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Botanical beauty for everyday life",
+            "heading": "Botanical beauty",
+            "heading_line_2": "for everyday life",
             "heading_size": "h0"
           }
         },
@@ -24,7 +25,8 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Timeless botanical designs inspired by nature. Created for your home and made to be loved every day.",
+            "text": "Timeless botanical designs inspired by nature.",
+            "text_line_2": "Created for your home and made to be loved every day.",
             "text_style": "body"
           }
         }
@@ -41,7 +43,7 @@
         "show_text_box": false,
         "image_behavior": "none",
         "desktop_content_alignment": "left",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
         "show_text_below": false
@@ -92,14 +94,16 @@
       "type": "kotkoa-editorial-columns",
       "settings": {
         "image_alt": "Botanical artwork in a home",
+        "brand_color_scheme": "scheme-1",
+        "library_color_scheme": "scheme-2",
         "brand_heading": "The KOTKOA world",
         "brand_text": "<p>KOTKOA is a botanical lifestyle brand created with a love for nature, art and slow living. We design products that bring beauty, calm and a touch of nature into your everyday life.</p>",
         "brand_link_label": "Learn more about KOTKOA",
-        "brand_link": "shopify://collections/all",
+        "brand_link": "",
         "library_heading": "For designers & creators",
         "library_text": "<p>Explore our Design Library — curated patterns, illustrations and photos for your creative projects.</p>",
         "library_link_label": "Explore the library",
-        "library_link": "shopify://collections/all"
+        "library_link": ""
       }
     },
     "trust_strip": {
@@ -116,10 +120,10 @@
     "collection_grid": {
       "type": "kotkoa-collection-grid",
       "blocks": {
-        "collection_1": { "type": "collection", "settings": { "title": "Lavender", "link": "shopify://collections/all" } },
-        "collection_2": { "type": "collection", "settings": { "title": "Lemon", "link": "shopify://collections/all" } },
-        "collection_3": { "type": "collection", "settings": { "title": "Tropical", "link": "shopify://collections/all" } },
-        "collection_4": { "type": "collection", "settings": { "title": "Grape & Olive", "link": "shopify://collections/all" } }
+        "collection_1": { "type": "collection", "settings": { "collection": "botanical-floral-decor", "title": "Lavender", "link": "" } },
+        "collection_2": { "type": "collection", "settings": { "collection": "mediterranean-collection", "title": "Lemon", "link": "" } },
+        "collection_3": { "type": "collection", "settings": { "collection": "pillow-covers", "title": "Tropical", "link": "" } },
+        "collection_4": { "type": "collection", "settings": { "collection": "gift-ideas", "title": "Grape & Olive", "link": "" } }
       },
       "block_order": ["collection_1", "collection_2", "collection_3", "collection_4"],
       "settings": {

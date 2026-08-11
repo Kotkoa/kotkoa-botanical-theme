@@ -397,6 +397,8 @@
       "settings": {
         "image": { "label": "Image" },
         "image_alt": { "label": "Image description" },
+        "brand_color_scheme": { "label": "Brand column color scheme" },
+        "library_color_scheme": { "label": "Library column color scheme" },
         "brand_heading": { "label": "Brand heading" },
         "brand_text": { "label": "Brand text" },
         "brand_link_label": { "label": "Brand link label" },
@@ -1344,6 +1346,9 @@
             "heading": {
               "label": "Heading",
               "default": "Image banner"
+            },
+            "heading_line_2": {
+              "label": "Heading second line"
             }
           }
         },
@@ -1353,6 +1358,9 @@
             "text": {
               "label": "Text",
               "default": "Give customers details about the banner image(s) or content on the template."
+            },
+            "text_line_2": {
+              "label": "Text second line"
             },
             "text_style": {
               "options__1": {

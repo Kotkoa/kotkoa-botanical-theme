@@ -22,6 +22,8 @@
               assign card_image = block.settings.collection.featured_image
             endif
           endif
+
+          assign card_image_alt = card_image.alt | default: card_title
         %}
         <article class="collection-grid__card" {{ block.shopify_attributes }}>
           {% if card_url != blank %}
@@ -29,7 +31,7 @@
           {% endif %}
             <div class="collection-grid__media">
               {% if card_image != blank %}
-                {{ card_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '375, 550, 750, 900, 1200', sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw', alt: card_image.alt }}
+                {{ card_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '375, 550, 750, 900, 1200', sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw', alt: card_image_alt }}
               {% else %}
                 <span class="collection-grid__empty-media" aria-hidden="true"></span>
               {% endif %}
@@ -62,6 +64,7 @@
     letter-spacing: 0.12em;
     text-align: center;
     text-transform: uppercase;
+    text-wrap: balance;
   }
 
   .collection-grid__items {
@@ -71,6 +74,7 @@
   }
 
   .collection-grid__card {
+    position: relative;
     min-width: 0;
   }
 
@@ -85,7 +89,7 @@
     position: relative;
     overflow: hidden;
     height: 250px;
-    background: #efefed;
+    background: rgb(var(--color-foreground) / 0.06);
   }
 
   .collection-grid__media img {
@@ -107,7 +111,7 @@
     bottom: 0;
     left: 10%;
     padding: 2.2rem 1.2rem 1.8rem;
-    background: #ffffff;
+    background: rgb(var(--color-background));
     text-align: center;
   }
 
@@ -117,6 +121,7 @@
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    text-wrap: balance;
   }
 
   .collection-grid__cta {
@@ -125,6 +130,17 @@
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .collection-grid__media img {
+      transition: none;
+    }
+
+    .collection-grid__link:hover .collection-grid__media img,
+    .collection-grid__link:focus-visible .collection-grid__media img {
+      transform: none;
+    }
   }
 
   @media screen and (max-width: 989px) {

@@ -354,6 +354,8 @@
       "settings": {
         "image": { "label": "Image" },
         "image_alt": { "label": "Image description" },
+        "brand_color_scheme": { "label": "Brand column color scheme" },
+        "library_color_scheme": { "label": "Library column color scheme" },
         "brand_heading": { "label": "Brand heading" },
         "brand_text": { "label": "Brand text" },
         "brand_link_label": { "label": "Brand link label" },

@@ -30,12 +30,11 @@
 
   #Banner-{{ section.id }} .banner__heading,
   #Banner-{{ section.id }} .banner__text {
-    color: #342B22;
+    color: rgb(var(--color-foreground));
+    text-wrap: balance;
   }
 
   #Banner-{{ section.id }} .banner__buttons .button {
-    background-color: #6E6652;
-    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 0.12em;
   }
@@ -43,7 +42,7 @@
   @media screen and (min-width: 750px) {
     #Banner-{{ section.id }},
     #Banner-{{ section.id }} .banner__media {
-      min-height: 640px;
+      min-height: 550px;
     }
   }
 {%- endstyle -%}
@@ -150,11 +149,19 @@
               class="banner__heading inline-richtext {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}
             >
-              {{ block.settings.heading | replace: ' for ', '<br>for ' }}
+              {{ block.settings.heading }}
+              {% if block.settings.heading_line_2 != blank %}
+                <br>{{ block.settings.heading_line_2 }}
+              {% endif %}
             </h2>
           {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-              <p>{{ block.settings.text | replace: ' Created ', '<br>Created ' }}</p>
+              <p>
+                {{ block.settings.text }}
+                {% if block.settings.text_line_2 != blank %}
+                  <br>{{ block.settings.text_line_2 }}
+                {% endif %}
+              </p>
             </div>
           {%- when 'buttons' -%}
             <div
@@ -399,6 +406,11 @@
           "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
         },
         {
+          "type": "inline_richtext",
+          "id": "heading_line_2",
+          "label": "t:sections.image-banner.blocks.heading.settings.heading_line_2.label"
+        },
+        {
           "type": "select",
           "id": "heading_size",
           "options": [
@@ -438,6 +450,11 @@
           "id": "text",
           "default": "t:sections.image-banner.blocks.text.settings.text.default",
           "label": "t:sections.image-banner.blocks.text.settings.text.label"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_line_2",
+          "label": "t:sections.image-banner.blocks.text.settings.text_line_2.label"
         },
         {
           "type": "select",
