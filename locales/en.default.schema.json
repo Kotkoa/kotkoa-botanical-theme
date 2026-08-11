@@ -375,6 +375,29 @@
     }
   },
   "sections": {
+    "icon_features": {
+      "name": "Icon features",
+      "settings": {
+        "heading": { "label": "Heading" },
+        "heading_size": {
+          "label": "Heading size",
+          "options": { "small": "Small", "medium": "Medium", "large": "Large" }
+        },
+        "color_scheme": { "label": "Color scheme" },
+        "padding_top": { "label": "Top padding" },
+        "padding_bottom": { "label": "Bottom padding" }
+      },
+      "blocks": {
+        "feature": {
+          "name": "Feature",
+          "settings": {
+            "icon": { "label": "Icon" },
+            "heading": { "label": "Heading" },
+            "text": { "label": "Description" }
+          }
+        }
+      }
+    },
     "all": {
       "animation": {
         "content": "Animations",

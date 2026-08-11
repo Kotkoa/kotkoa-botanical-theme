@@ -332,6 +332,29 @@
       "view_all": "View all",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
+    "icon_features": {
+      "name": "Icon features",
+      "settings": {
+        "heading": { "label": "Heading" },
+        "heading_size": {
+          "label": "Heading size",
+          "options": { "small": "Small", "medium": "Medium", "large": "Large" }
+        },
+        "color_scheme": { "label": "Color scheme" },
+        "padding_top": { "label": "Top padding" },
+        "padding_bottom": { "label": "Bottom padding" }
+      },
+      "blocks": {
+        "feature": {
+          "name": "Feature",
+          "settings": {
+            "icon": { "label": "Icon" },
+            "heading": { "label": "Heading" },
+            "text": { "label": "Description" }
+          }
+        }
+      }
+    },
     "collection_list": {
       "view_all": "View all"
     },

@@ -1,0 +1,197 @@
+{%- style -%}
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: calc(var(--spacing-sections-desktop) / 2);
+    }
+  }
+{%- endstyle -%}
+
+<section class="icon-features color-{{ section.settings.color_scheme }} gradient" style="--icon-features-padding-top: {{ section.settings.padding_top }}px; --icon-features-padding-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h2 class="icon-features__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+    {% endif %}
+
+    <div class="icon-features__grid">
+      {% for block in section.blocks %}
+        <article class="icon-features__item" {{ block.shopify_attributes }}>
+          <div class="icon-features__icon">
+            {% if block.settings.icon != blank %}
+              {{ block.settings.icon | image_url: width: 160 | image_tag: loading: 'lazy', widths: '80, 120, 160', alt: '' }}
+            {% else %}
+              <span class="icon-features__placeholder" aria-hidden="true"></span>
+            {% endif %}
+          </div>
+          {% if block.settings.heading != blank %}
+            <h3 class="icon-features__title">{{ block.settings.heading | escape }}</h3>
+          {% endif %}
+          {% if block.settings.text != blank %}
+            <div class="icon-features__text rte">{{ block.settings.text }}</div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .icon-features {
+    padding-top: var(--icon-features-padding-top);
+    padding-bottom: var(--icon-features-padding-bottom);
+  }
+
+  .icon-features__heading {
+    margin: 0 0 4rem;
+    text-align: center;
+  }
+
+  .icon-features__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3rem;
+  }
+
+  .icon-features__item {
+    text-align: center;
+  }
+
+  .icon-features__icon {
+    display: grid;
+    place-items: center;
+    height: 3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .icon-features__icon img {
+    display: block;
+    width: auto;
+    max-width: 3rem;
+    height: auto;
+    max-height: 3rem;
+    object-fit: contain;
+  }
+
+  .icon-features__placeholder {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid currentcolor;
+    border-radius: 50%;
+  }
+
+  .icon-features__title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .icon-features__text {
+    margin-top: 0.6rem;
+    color: rgb(var(--color-foreground) / 0.72);
+  }
+
+  .icon-features__text p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .icon-features__heading {
+      margin-bottom: 3rem;
+    }
+
+    .icon-features__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 3rem 1.5rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.icon_features.name",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:sections.icon_features.settings.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:sections.icon_features.settings.heading_size.label",
+      "options": [
+        { "value": "h2", "label": "t:sections.icon_features.settings.heading_size.options.small" },
+        { "value": "h1", "label": "t:sections.icon_features.settings.heading_size.options.medium" },
+        { "value": "h0", "label": "t:sections.icon_features.settings.heading_size.options.large" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.icon_features.settings.color_scheme.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "t:sections.icon_features.settings.padding_top.label",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "t:sections.icon_features.settings.padding_bottom.label",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "t:sections.icon_features.blocks.feature.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "t:sections.icon_features.blocks.feature.settings.icon.label"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.icon_features.blocks.feature.settings.heading.label",
+          "default": "Feature title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.icon_features.blocks.feature.settings.text.label",
+          "default": "<p>Describe a feature of your brand.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.icon_features.name",
+      "blocks": [
+        { "type": "feature", "settings": { "heading": "Inspired by nature", "text": "<p>Botanical forms, colours and textures guide every collection.</p>" } },
+        { "type": "feature", "settings": { "heading": "Timeless designs", "text": "<p>Pieces designed to belong in your home for years to come.</p>" } },
+        { "type": "feature", "settings": { "heading": "Made for home", "text": "<p>Everyday objects made to bring beauty to familiar spaces.</p>" } },
+        { "type": "feature", "settings": { "heading": "Made with care", "text": "<p>Thoughtfully created in small batches with attention to detail.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

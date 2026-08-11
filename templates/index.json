@@ -47,6 +47,47 @@
         "show_text_below": false
       }
     },
+    "icon_features": {
+      "type": "kotkoa-icon-features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "heading": "Inspired by nature",
+            "text": "<p>Botanical forms, colours and textures guide every collection.</p>"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "heading": "Timeless designs",
+            "text": "<p>Pieces designed to belong in your home for years to come.</p>"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "heading": "Made for home",
+            "text": "<p>Everyday objects made to bring beauty to familiar spaces.</p>"
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "heading": "Made with care",
+            "text": "<p>Thoughtfully created in small batches with attention to detail.</p>"
+          }
+        }
+      },
+      "block_order": ["feature_1", "feature_2", "feature_3", "feature_4"],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -78,6 +119,7 @@
   },
   "order": [
     "image_banner",
+    "icon_features",
     "featured_collection"
   ]
 }
