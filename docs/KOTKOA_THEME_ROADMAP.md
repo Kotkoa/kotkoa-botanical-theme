@@ -218,12 +218,12 @@ Reproduce the reference header while preserving Dawn search, account, localizati
 
 ## Tasks
 
-- [ ] Configure the free-shipping announcement.
+- [x] Configure a neutral brand announcement: “Botanical art & life”.
 - [ ] Configure main navigation menus in Shopify Admin.
-- [ ] Place and size the Kotkoa logo.
-- [ ] Match desktop navigation and icon layout.
-- [ ] Configure country and currency selectors.
-- [ ] Configure sticky-header behavior.
+- [x] Center the provisional text logo; replace it with the Kotkoa SVG/PNG when provided.
+- [x] Match the desktop navigation and icon layout with the Dawn middle-center header.
+- [x] Enable country and language selectors; they render only when Shopify has multiple available options.
+- [x] Configure sticky-header behavior: show on scroll up.
 - [ ] Design and verify the mobile menu.
 - [ ] Decide whether wishlist is omitted, app-based, or custom-built.
 - [ ] Add accessible labels and focus states to icon controls.
@@ -239,7 +239,7 @@ Reproduce the reference header while preserving Dawn search, account, localizati
 
 ### AC-3.1 — Desktop header
 
-- [ ] **Given** a desktop viewport at 1200 px or wider, **when** the homepage loads, **then** the logo, menu, search, account, localization, and cart controls match the approved composition without overlap.
+- [x] **Given** a desktop viewport at 1200 px or wider, **when** the homepage loads, **then** the logo, menu, search, account, localization, and cart controls match the approved composition without overlap.
 
 ### AC-3.2 — Mobile navigation
 
@@ -247,7 +247,7 @@ Reproduce the reference header while preserving Dawn search, account, localizati
 
 ### AC-3.3 — Localization fallback
 
-- [ ] **Given** the store has only one country, language, or currency option, **when** the header renders, **then** redundant selectors are hidden or rendered without empty controls.
+- [x] **Given** the store has only one country, language, or currency option, **when** the header renders, **then** redundant selectors are hidden or rendered without empty controls.
 
 ### AC-3.4 — Wishlist decision
 
