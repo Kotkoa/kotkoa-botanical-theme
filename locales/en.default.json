@@ -332,6 +332,23 @@
       "view_all": "View all",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
+    "trust_strip": {
+      "name": "Trust strip",
+      "settings": {
+        "color_scheme": { "label": "Color scheme" },
+        "padding_top": { "label": "Top padding" },
+        "padding_bottom": { "label": "Bottom padding" }
+      },
+      "blocks": {
+        "benefit": {
+          "name": "Benefit",
+          "settings": {
+            "heading": { "label": "Heading" },
+            "text": { "label": "Description" }
+          }
+        }
+      }
+    },
     "editorial_columns": {
       "name": "Editorial columns",
       "settings": {

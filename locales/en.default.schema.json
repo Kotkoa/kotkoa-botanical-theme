@@ -375,6 +375,23 @@
     }
   },
   "sections": {
+    "trust_strip": {
+      "name": "Trust strip",
+      "settings": {
+        "color_scheme": { "label": "Color scheme" },
+        "padding_top": { "label": "Top padding" },
+        "padding_bottom": { "label": "Bottom padding" }
+      },
+      "blocks": {
+        "benefit": {
+          "name": "Benefit",
+          "settings": {
+            "heading": { "label": "Heading" },
+            "text": { "label": "Description" }
+          }
+        }
+      }
+    },
     "editorial_columns": {
       "name": "Editorial columns",
       "settings": {

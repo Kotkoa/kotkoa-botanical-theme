@@ -102,6 +102,17 @@
         "library_link": "shopify://collections/all"
       }
     },
+    "trust_strip": {
+      "type": "kotkoa-trust-strip",
+      "blocks": {
+        "benefit_1": { "type": "benefit", "settings": { "heading": "Secure payments", "text": "Safe & encrypted checkout" } },
+        "benefit_2": { "type": "benefit", "settings": { "heading": "Free shipping", "text": "On orders over $100" } },
+        "benefit_3": { "type": "benefit", "settings": { "heading": "Easy returns", "text": "30 days return policy" } },
+        "benefit_4": { "type": "benefit", "settings": { "heading": "Customer support", "text": "We're here to help" } }
+      },
+      "block_order": ["benefit_1", "benefit_2", "benefit_3", "benefit_4"],
+      "settings": { "color_scheme": "scheme-1", "padding_top": 20, "padding_bottom": 20 }
+    },
     "collection_grid": {
       "type": "kotkoa-collection-grid",
       "blocks": {
@@ -124,6 +135,7 @@
     "image_banner",
     "icon_features",
     "collection_grid",
-    "editorial_columns"
+    "editorial_columns",
+    "trust_strip"
   ]
 }
