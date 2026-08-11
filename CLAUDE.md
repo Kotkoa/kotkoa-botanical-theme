@@ -1,0 +1,1 @@
+/Users/kotkoa/dev/Shopify/kotkoa-botanical-theme/AGENTS.md
