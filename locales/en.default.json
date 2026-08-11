@@ -332,6 +332,31 @@
       "view_all": "View all",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
+    "collection_grid": {
+      "name": "Collection grid",
+      "settings": {
+        "heading": { "label": "Heading" },
+        "heading_size": {
+          "label": "Heading size",
+          "options": { "small": "Small", "medium": "Medium", "large": "Large" }
+        },
+        "color_scheme": { "label": "Color scheme" },
+        "padding_top": { "label": "Top padding" },
+        "padding_bottom": { "label": "Bottom padding" }
+      },
+      "blocks": {
+        "collection": {
+          "name": "Collection card",
+          "settings": {
+            "collection": { "label": "Collection" },
+            "image": { "label": "Image override" },
+            "title": { "label": "Title override" },
+            "link": { "label": "Link override" }
+          }
+        }
+      },
+      "shop_now": "Shop now"
+    },
     "icon_features": {
       "name": "Icon features",
       "settings": {

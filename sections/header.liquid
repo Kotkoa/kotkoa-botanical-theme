@@ -123,6 +123,12 @@
     line-height: 1;
   }
 
+  .kotkoa-header__logo {
+    display: block;
+    width: 16rem;
+    height: auto;
+  }
+
   .kotkoa-header__tagline {
     margin-top: 0.6rem;
     font-family: var(--font-body-family);
@@ -293,8 +299,13 @@
           </div>
         {%- else -%}
           <span class="kotkoa-header__brand">
-            <span class="h2">{{ shop.name }}</span>
-            <span class="kotkoa-header__tagline" translate="no">{{ 'general.brand.tagline' | t }}</span>
+            <img
+              class="kotkoa-header__logo"
+              src="{{ 'kotkoa-logo.svg' | asset_url }}"
+              width="665"
+              height="197"
+              alt="{{ shop.name | escape }}"
+            >
           </span>
         {%- endif -%}
       </a>
