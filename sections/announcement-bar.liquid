@@ -162,6 +162,39 @@
   </div>
 </div>
 
+{% stylesheet %}
+  .announcement-bar-section .announcement-bar,
+  .announcement-bar-section .announcement-bar__announcement,
+  .announcement-bar-section .announcement-bar__link {
+    justify-content: flex-start;
+  }
+
+  .announcement-bar-section .announcement-bar__message {
+    font-family: var(--font-body-family);
+    font-size: 1rem;
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    min-height: 3.8rem;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 990px) {
+    .announcement-bar-section .utility-bar__grid--3-col {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'announcements';
+    }
+
+    .announcement-bar-section .announcement-bar.announcement-bar--one-announcement,
+    .announcement-bar-section .announcement-bar--one-announcement .announcement-bar__link {
+      width: 100%;
+      margin: 0;
+    }
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
