@@ -175,8 +175,8 @@ Create global visual rules before styling individual homepage sections.
 ## Tasks
 
 - [ ] Define approved color schemes for warm neutral, olive accent, lavender accent, and dark contrast areas.
-- [ ] Choose the heading and body font families.
-- [ ] Configure typography scale and line heights.
+- [x] Choose the heading and body font families provisionally: Playfair Display and Assistant.
+- [x] Configure typography scale and line heights provisionally.
 - [x] Configure content width and section spacing.
 - [x] Configure button, input, card, badge, and media styles.
 - [ ] Upload/configure the logo and favicon.
@@ -218,7 +218,7 @@ Reproduce the reference header while preserving Dawn search, account, localizati
 
 ## Tasks
 
-- [x] Configure a neutral brand announcement: “Botanical art & life”.
+- [ ] Configure a neutral brand announcement: “Botanical art & life”.
 - [ ] Configure main navigation menus in Shopify Admin.
 - [x] Center the provisional text logo; replace it with the Kotkoa SVG/PNG when provided.
 - [x] Match the desktop navigation and icon layout with the Dawn middle-center header.
@@ -263,13 +263,13 @@ Create an editable, responsive hero matching the editorial image/text compositio
 
 ## Tasks
 
-- [ ] Decide whether to extend Dawn `image-banner` or create `sections/kotkoa-hero.liquid`.
-- [ ] Add desktop and mobile image settings.
-- [ ] Add heading, description, CTA label, and CTA link settings.
-- [ ] Add content position, alignment, overlay, and height settings.
-- [ ] Configure focal-point-safe image cropping.
-- [ ] Optimize responsive image output and loading priority.
-- [ ] Add locale keys for section UI text where required.
+- [x] Decide whether to extend Dawn `image-banner` or create `sections/kotkoa-hero.liquid`: Dawn `image-banner` was extended.
+- [x] Add desktop and mobile image settings using Dawn's image and secondary image settings.
+- [x] Add heading, description, CTA label, and CTA link settings using editable Dawn blocks.
+- [x] Add content position, alignment, overlay, and height settings.
+- [x] Configure focal-point-safe image cropping using the existing responsive banner behavior.
+- [x] Optimize responsive image output and loading priority provisionally.
+- [x] Add locale keys for section UI text where required.
 
 ## Learning track
 
@@ -306,12 +306,12 @@ Create the four-item “Inspired by nature” feature section with editable, reo
 
 ## Tasks
 
-- [ ] Create the Kotkoa features section.
-- [ ] Add icon, heading, description, and optional link settings per block.
-- [ ] Add 4-block default preset based on the reference.
-- [ ] Create desktop, tablet, and mobile layouts.
-- [ ] Ensure decorative icons are hidden from assistive technology.
-- [ ] Add translation keys for storefront/editor text as needed.
+- [x] Create the Kotkoa features section.
+- [x] Add icon, heading, and description settings per block. Optional links are not implemented yet.
+- [x] Add 4-block default preset based on the reference.
+- [x] Create desktop, tablet, and mobile layouts.
+- [x] Ensure decorative icons are hidden from assistive technology.
+- [x] Add translation keys for storefront/editor text as needed.
 
 ## Learning track
 
@@ -345,10 +345,10 @@ Connect the four visual cards to real Shopify collections while matching the ima
 
 - [ ] Create/confirm the required collections in Shopify Admin.
 - [ ] Assign collection titles, descriptions, images, products, and SEO fields.
-- [ ] Decide whether Dawn `collection-list` is sufficient or create `sections/kotkoa-collection-grid.liquid`.
-- [ ] Use collection resource settings rather than manually typed handles.
-- [ ] Add image, title, CTA, and fallback behavior.
-- [ ] Implement the approved desktop and mobile grid/slider behavior.
+- [x] Decide whether Dawn `collection-list` is sufficient or create `sections/kotkoa-collection-grid.liquid`: a custom section was created.
+- [x] Use collection resource settings rather than manually typed handles.
+- [x] Add image, title, CTA, and fallback behavior.
+- [x] Implement the provisional desktop and mobile grid behavior. Slider behavior is not implemented.
 
 ## Learning track
 
@@ -384,10 +384,10 @@ Build the three-part “The Kotkoa world” and “For designers & creators” e
 
 ## Tasks
 
-- [ ] Create a reusable split-content section.
-- [ ] Add image, two headings, two text fields, two links, and optional decorative icon settings.
-- [ ] Implement the desktop three-column composition.
-- [ ] Define a deliberate mobile content order.
+- [x] Create a reusable split-content section.
+- [x] Add image, two headings, two text fields, two links, and a decorative motif fallback. Configurable decorative icon settings are not implemented.
+- [x] Implement the desktop three-column composition.
+- [x] Define a deliberate mobile content order.
 - [ ] Verify semantic heading hierarchy and link labels.
 
 ## Learning track
@@ -426,15 +426,15 @@ Keep reference block 7 as a Trust strip and add only the compact legal/navigatio
 
 ## Tasks — Trust strip
 
-- [ ] Create a Trust strip section with reorderable blocks.
-- [ ] Add icon, heading, short description, and optional link per block.
+- [x] Create a Trust strip section with reorderable blocks.
+- [ ] Add icon, heading, short description, and optional link per block. Heading and description are implemented; icon and link settings are still pending.
 - [ ] Connect each promise to actual store policy/configuration.
-- [ ] Implement responsive wrapping without turning the strip into an oversized footer.
+- [x] Implement responsive wrapping without turning the strip into an oversized footer.
 
 ## Tasks — compact footer
 
-- [ ] Adapt Dawn footer or create a minimal footer configuration.
-- [ ] Add copyright text.
+- [x] Adapt Dawn footer or create a minimal footer configuration.
+- [x] Add the compact footer/newsletter structure provisionally.
 - [ ] Add links to Privacy, Terms, Shipping, Returns, and Contact where applicable.
 - [ ] Add Instagram/Pinterest only if active profiles exist.
 - [ ] Retain country/language selectors only if they add value and do not duplicate the header unnecessarily.
@@ -694,10 +694,10 @@ Validate the complete storefront, release deliberately, and retain a recoverable
 3. [ ] Build Stage 2 design system.
 4. [ ] Build Stage 3 announcement bar/header.
 5. [ ] Build Stage 4 hero.
-6. [ ] Build Stage 5 brand features.
-7. [ ] Build Stage 6 collection grid.
-8. [ ] Build Stage 7 editorial split content.
-9. [ ] Build Stage 8 Trust strip and compact footer.
+6. [x] Build Stage 5 brand features (implementation complete; QA pending).
+7. [x] Build Stage 6 collection grid (implementation complete; Shopify collections and QA pending).
+8. [x] Build Stage 7 editorial split content (implementation complete; QA pending).
+9. [x] Build Stage 8 Trust strip and compact footer (implementation partial; Admin data and QA pending).
 10. [ ] Complete Stage 9 commerce/content templates.
 11. [ ] Complete Stage 10 responsive review.
 12. [ ] Complete Stages 11–12 accessibility, performance, SEO, and Admin setup.
