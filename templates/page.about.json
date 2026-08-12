@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "kotkoa-about",
+      "settings": {
+        "image_alt": "Botanical art in the KOTKOA studio",
+        "caption_name": "KOTKOA Studio",
+        "caption_role": "Botanical art & life",
+        "eyebrow": "About KOTKOA",
+        "heading": "Art made for the things you love.",
+        "text": "<p>We’re a husband-and-wife art studio creating beautiful illustrations, photo mockups and customisable design kits for creative people and thoughtful brands.</p><p>Our work brings an artistic, botanical point of view to the everyday — helping you present your products and spaces in a way that feels true to your style.</p><p>Andrey &amp; Olesia<br>Founders of KOTKOA Studio</p>",
+        "link_label": "Explore the shop",
+        "link": "shopify://collections/all"
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,177 @@
+<section class="kotkoa-about" {{ section.shopify_attributes }}>
+  <div class="kotkoa-about__inner page-width">
+    <div class="kotkoa-about__portrait">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1400 | image_tag: class: 'kotkoa-about__image', loading: 'eager', widths: '500, 700, 1000, 1400', sizes: '(min-width: 990px) 42vw, 100vw', alt: section.settings.image.alt }}
+      {% else %}
+        <img class="kotkoa-about__image" src="{{ 'botanical-world.png' | asset_url }}" width="1536" height="1024" loading="eager" alt="{{ section.settings.image_alt | escape }}">
+      {% endif %}
+      <div class="kotkoa-about__portrait-caption">
+        <span>{{ section.settings.caption_name | escape }}</span>
+        <small>{{ section.settings.caption_role | escape }}</small>
+      </div>
+    </div>
+
+    <div class="kotkoa-about__content">
+      {% if section.settings.eyebrow != blank %}
+        <p class="kotkoa-about__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {% endif %}
+      <h1 class="kotkoa-about__heading">{{ section.settings.heading | escape }}</h1>
+      <div class="kotkoa-about__text rte">{{ section.settings.text }}</div>
+      {% if section.settings.link_label != blank and section.settings.link != blank %}
+        <a class="kotkoa-about__link" href="{{ section.settings.link }}">{{ section.settings.link_label | escape }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .kotkoa-about {
+    overflow: hidden;
+    padding: clamp(4rem, 7vw, 10rem) 0;
+    background: #050505;
+    color: #f7f4ef;
+  }
+
+  .kotkoa-about__inner {
+    display: grid;
+    max-width: 124rem;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(4rem, 7vw, 11rem);
+  }
+
+  .kotkoa-about__portrait {
+    position: relative;
+    min-height: 52rem;
+    overflow: hidden;
+    border: 1px solid rgb(247 244 239 / 0.18);
+    border-radius: 4.8rem 4.8rem 4.8rem 9rem;
+    background: #1c1c1c;
+    box-shadow: 2.4rem 2.4rem 0 rgb(104 55 143 / 0.32);
+  }
+
+  .kotkoa-about__portrait::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 42%, rgb(0 0 0 / 0.82) 100%);
+    content: '';
+    pointer-events: none;
+  }
+
+  .kotkoa-about__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 52rem;
+    object-fit: cover;
+  }
+
+  .kotkoa-about__portrait-caption {
+    position: absolute;
+    z-index: 1;
+    right: 3rem;
+    bottom: 2.6rem;
+    left: 3rem;
+  }
+
+  .kotkoa-about__portrait-caption span,
+  .kotkoa-about__portrait-caption small {
+    display: block;
+  }
+
+  .kotkoa-about__portrait-caption span {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.6rem, 3.4vw, 4.6rem);
+    line-height: 1;
+  }
+
+  .kotkoa-about__portrait-caption small,
+  .kotkoa-about__eyebrow,
+  .kotkoa-about__link {
+    margin: 0;
+    font-family: var(--font-body-family);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .kotkoa-about__portrait-caption small {
+    margin-top: 0.9rem;
+    color: #d7aaff;
+  }
+
+  .kotkoa-about__eyebrow {
+    color: #58a6ff;
+  }
+
+  .kotkoa-about__heading {
+    max-width: 66rem;
+    margin: 2.4rem 0;
+    color: inherit;
+    font-size: clamp(4.6rem, 6.7vw, 8.4rem);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+
+  .kotkoa-about__text {
+    max-width: 64rem;
+    color: rgb(247 244 239 / 0.83);
+    font-size: clamp(1.7rem, 1.6vw, 2.1rem);
+    line-height: 1.5;
+  }
+
+  .kotkoa-about__text p {
+    margin: 0 0 1.6rem;
+  }
+
+  .kotkoa-about__link {
+    display: inline-block;
+    margin-top: 1.6rem;
+    padding: 1.4rem 2.1rem;
+    border: 1px solid #f7f4ef;
+    color: #f7f4ef;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+
+  .kotkoa-about__link:hover {
+    background: #f7f4ef;
+    color: #050505;
+  }
+
+  @media screen and (max-width: 989px) {
+    .kotkoa-about__inner { gap: 4rem; }
+    .kotkoa-about__portrait, .kotkoa-about__image { min-height: 44rem; }
+  }
+
+  @media screen and (max-width: 749px) {
+    .kotkoa-about { padding: 4rem 0 5.5rem; }
+    .kotkoa-about__inner { grid-template-columns: 1fr; gap: 4.8rem; }
+    .kotkoa-about__portrait, .kotkoa-about__image { min-height: 45rem; }
+    .kotkoa-about__portrait { border-radius: 3.2rem 3.2rem 3.2rem 6.4rem; box-shadow: 1.3rem 1.3rem 0 rgb(104 55 143 / 0.3); }
+    .kotkoa-about__heading { font-size: clamp(4.4rem, 14vw, 6.2rem); }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "KOTKOA about",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Portrait or studio image" },
+    { "type": "text", "id": "image_alt", "label": "Fallback image description", "default": "Botanical art in the KOTKOA studio" },
+    { "type": "text", "id": "caption_name", "label": "Image caption name", "default": "KOTKOA Studio" },
+    { "type": "text", "id": "caption_role", "label": "Image caption role", "default": "Botanical art & life" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "About KOTKOA" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Art made for the things you love." },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>We’re a husband-and-wife art studio creating beautiful illustrations, photo mockups and customisable design kits for creative people and thoughtful brands.</p><p>Our work brings an artistic, botanical point of view to the everyday — helping you present your products and spaces in a way that feels true to your style.</p><p>Andrey &amp; Olesia<br>Founders of KOTKOA Studio</p>" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Explore the shop" },
+    { "type": "url", "id": "link", "label": "Link" }
+  ]
+}
+{% endschema %}
