@@ -219,14 +219,63 @@
     "seasonal_collections": {
       "type": "kotkoa-seasonal-collections",
       "blocks": {
-        "autumn": { "type": "collection", "settings": { "title": "Autumn" } },
-        "christmas": { "type": "collection", "settings": { "title": "Christmas" } },
-        "winter": { "type": "collection", "settings": { "title": "Winter" } },
-        "valentines_day": { "type": "collection", "settings": { "title": "Valentine's day" } },
-        "easter": { "type": "collection", "settings": { "title": "Easter" } },
-        "summer": { "type": "collection", "settings": { "title": "Summer" } }
+        "autumn": {
+          "type": "collection",
+          "settings": {
+            "collection": "autumn",
+            "title": "Autumn",
+            "link": ""
+          }
+        },
+        "christmas": {
+          "type": "collection",
+          "settings": {
+            "collection": "christmas",
+            "title": "Christmas",
+            "link": ""
+          }
+        },
+        "winter": {
+          "type": "collection",
+          "settings": {
+            "collection": "winter",
+            "title": "Winter",
+            "link": ""
+          }
+        },
+        "valentines_day": {
+          "type": "collection",
+          "settings": {
+            "collection": "valentines-day",
+            "title": "Valentine's day",
+            "link": ""
+          }
+        },
+        "easter": {
+          "type": "collection",
+          "settings": {
+            "collection": "easter",
+            "title": "Easter",
+            "link": ""
+          }
+        },
+        "summer": {
+          "type": "collection",
+          "settings": {
+            "collection": "summer",
+            "title": "Summer",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["autumn", "christmas", "winter", "valentines_day", "easter", "summer"],
+      "block_order": [
+        "autumn",
+        "christmas",
+        "winter",
+        "valentines_day",
+        "easter",
+        "summer"
+      ],
       "settings": {
         "heading": "Seasonal collections",
         "subheading": "Celebrate every season with botanical charm",
