@@ -413,6 +413,10 @@
       "name": "Collection grid",
       "settings": {
         "heading": { "label": "Heading" },
+        "columns_desktop": {
+          "label": "Columns on desktop",
+          "options": { "four": "4", "five": "5" }
+        },
         "heading_size": {
           "label": "Heading size",
           "options": { "small": "Small", "medium": "Medium", "large": "Large" }

@@ -1,4 +1,4 @@
-<section class="collection-grid color-{{ section.settings.color_scheme }} gradient" style="--collection-grid-padding-top: {{ section.settings.padding_top }}px; --collection-grid-padding-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+<section class="collection-grid collection-grid--{{ section.settings.columns_desktop }}-columns color-{{ section.settings.color_scheme }} gradient" style="--collection-grid-padding-top: {{ section.settings.padding_top }}px; --collection-grid-padding-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
   <div class="page-width">
     {% if section.settings.heading != blank %}
       <h2 class="collection-grid__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
@@ -33,7 +33,7 @@
               {% if card_image != blank %}
                 {{ card_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '375, 550, 750, 900, 1200', sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw', alt: card_image_alt }}
               {% else %}
-                <span class="collection-grid__empty-media" aria-hidden="true"></span>
+                <img src="{{ 'best-seller-placeholder.jpg' | asset_url }}" width="1024" height="1280" loading="lazy" alt="">
               {% endif %}
             </div>
             {% if card_title != blank %}
@@ -70,6 +70,47 @@
   .collection-grid__items {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .collection-grid--5-columns .collection-grid__items {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .collection-grid--5-columns .collection-grid__card {
+    height: 320px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #f1e9e5;
+  }
+
+  .collection-grid--5-columns .collection-grid__media {
+    height: 268px;
+    border-radius: 0;
+  }
+
+  .collection-grid--5-columns .collection-grid__label {
+    position: static;
+    box-sizing: border-box;
+    height: 52px;
+    padding: 1.3rem 1rem;
+    background: #f1e9e5;
+  }
+
+  .collection-grid--5-columns .collection-grid__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.7rem;
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: none;
+  }
+
+  .collection-grid--5-columns .collection-grid__cta {
+    display: none;
+  }
+
+  .collection-grid__items {
     gap: 2rem;
   }
 
@@ -90,6 +131,7 @@
     overflow: hidden;
     height: 250px;
     background: rgb(var(--color-foreground) / 0.06);
+    border-radius: 4px;
   }
 
   .collection-grid__media img {
@@ -177,6 +219,16 @@
       "type": "inline_richtext",
       "id": "heading",
       "label": "t:sections.collection_grid.settings.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "t:sections.collection_grid.settings.columns_desktop.label",
+      "options": [
+        { "value": "4", "label": "t:sections.collection_grid.settings.columns_desktop.options.four" },
+        { "value": "5", "label": "t:sections.collection_grid.settings.columns_desktop.options.five" }
+      ],
+      "default": "4"
     },
     {
       "type": "select",

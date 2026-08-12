@@ -149,6 +149,57 @@
       ],
       "settings": {
         "heading": "Shop by collection",
+        "columns_desktop": "4",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "best_sellers": {
+      "type": "kotkoa-collection-grid",
+      "blocks": {
+        "placeholder_1": {
+          "type": "collection",
+          "settings": {
+            "title": "Best seller"
+          }
+        },
+        "placeholder_2": {
+          "type": "collection",
+          "settings": {
+            "title": "Best seller"
+          }
+        },
+        "placeholder_3": {
+          "type": "collection",
+          "settings": {
+            "title": "Best seller"
+          }
+        },
+        "placeholder_4": {
+          "type": "collection",
+          "settings": {
+            "title": "Best seller"
+          }
+        },
+        "placeholder_5": {
+          "type": "collection",
+          "settings": {
+            "title": "Best seller"
+          }
+        }
+      },
+      "block_order": [
+        "placeholder_1",
+        "placeholder_2",
+        "placeholder_3",
+        "placeholder_4",
+        "placeholder_5"
+      ],
+      "settings": {
+        "heading": "Best sellers",
+        "columns_desktop": "5",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
         "padding_top": 32,
@@ -221,6 +272,7 @@
     "image_banner",
     "icon_features",
     "collection_grid",
+    "best_sellers",
     "editorial_columns",
     "trust_strip"
   ]
