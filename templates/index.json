@@ -162,31 +162,41 @@
         "placeholder_1": {
           "type": "collection",
           "settings": {
-            "title": "Best seller"
+            "collection": "pillow-covers",
+            "title": "Pillow",
+            "link": ""
           }
         },
         "placeholder_2": {
           "type": "collection",
           "settings": {
-            "title": "Best seller"
+            "collection": "table-linens",
+            "title": "Table Linens",
+            "link": ""
           }
         },
         "placeholder_3": {
           "type": "collection",
           "settings": {
-            "title": "Best seller"
+            "collection": "totebag",
+            "title": "Totebag",
+            "link": ""
           }
         },
         "placeholder_4": {
           "type": "collection",
           "settings": {
-            "title": "Best seller"
+            "collection": "wrapping-paper",
+            "title": "Wrapping Paper",
+            "link": ""
           }
         },
         "placeholder_5": {
           "type": "collection",
           "settings": {
-            "title": "Best seller"
+            "collection": "wall-art",
+            "title": "Wall Art",
+            "link": ""
           }
         }
       },
@@ -206,8 +216,28 @@
         "padding_bottom": 32
       }
     },
+    "seasonal_collections": {
+      "type": "kotkoa-seasonal-collections",
+      "blocks": {
+        "autumn": { "type": "collection", "settings": { "title": "Autumn" } },
+        "christmas": { "type": "collection", "settings": { "title": "Christmas" } },
+        "winter": { "type": "collection", "settings": { "title": "Winter" } },
+        "valentines_day": { "type": "collection", "settings": { "title": "Valentine's day" } },
+        "easter": { "type": "collection", "settings": { "title": "Easter" } },
+        "summer": { "type": "collection", "settings": { "title": "Summer" } }
+      },
+      "block_order": ["autumn", "christmas", "winter", "valentines_day", "easter", "summer"],
+      "settings": {
+        "heading": "Seasonal collections",
+        "subheading": "Celebrate every season with botanical charm",
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
     "editorial_columns": {
       "type": "kotkoa-editorial-columns",
+      "disabled": true,
       "settings": {
         "image_alt": "Botanical artwork in a home",
         "brand_color_scheme": "scheme-1",
@@ -273,6 +303,7 @@
     "icon_features",
     "collection_grid",
     "best_sellers",
+    "seasonal_collections",
     "editorial_columns",
     "trust_strip"
   ]

@@ -395,6 +395,27 @@
       },
       "shop_now": "Shop now"
     },
+    "seasonal_collections": {
+      "name": "Seasonal collections",
+      "settings": {
+        "heading": { "label": "Heading" },
+        "subheading": { "label": "Subheading" },
+        "color_scheme": { "label": "Color scheme" },
+        "padding_top": { "label": "Top padding" },
+        "padding_bottom": { "label": "Bottom padding" }
+      },
+      "blocks": {
+        "collection": {
+          "name": "Seasonal collection",
+          "settings": {
+            "collection": { "label": "Collection" },
+            "image": { "label": "Image override" },
+            "title": { "label": "Title override" },
+            "link": { "label": "Link override" }
+          }
+        }
+      }
+    },
     "icon_features": {
       "name": "Icon features",
       "settings": {
