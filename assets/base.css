@@ -161,6 +161,36 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   flex-grow: 1;
 }
 
+/* Shopify policy pages are rendered outside of theme sections. */
+.shopify-policy__container {
+  width: min(100%, 90rem);
+  max-width: 90rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 4rem 2.4rem 6.4rem;
+}
+
+.shopify-policy__title {
+  text-align: left;
+}
+
+.shopify-policy__body {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 749px) {
+  .shopify-policy__container {
+    width: 100%;
+    padding: 2.4rem 2rem 4.8rem;
+  }
+
+  .shopify-policy__body {
+    font-size: 1.5rem;
+    line-height: 1.7;
+  }
+}
+
 .section + .section {
   margin-top: var(--spacing-sections-mobile);
 }
