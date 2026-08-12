@@ -96,6 +96,7 @@
         "feature_3",
         "feature_4"
       ],
+      "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h1",
@@ -208,6 +209,7 @@
         "benefit_3",
         "benefit_4"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "padding_top": 20,
