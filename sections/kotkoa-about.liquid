@@ -1,4 +1,4 @@
-<section class="kotkoa-about" {{ section.shopify_attributes }}>
+<section class="kotkoa-about color-{{ section.settings.color_scheme }} gradient" {{ section.shopify_attributes }}>
   <div class="kotkoa-about__inner page-width">
     <div class="kotkoa-about__portrait">
       {% if section.settings.image != blank %}
@@ -29,8 +29,7 @@
   .kotkoa-about {
     overflow: hidden;
     padding: clamp(4rem, 7vw, 10rem) 0;
-    background: #050505;
-    color: #f7f4ef;
+    color: rgb(var(--color-foreground));
   }
 
   .kotkoa-about__inner {
@@ -45,10 +44,10 @@
     position: relative;
     min-height: 52rem;
     overflow: hidden;
-    border: 1px solid rgb(247 244 239 / 0.18);
+    border: 1px solid rgb(var(--color-foreground) / 0.18);
     border-radius: 4.8rem 4.8rem 4.8rem 9rem;
-    background: #1c1c1c;
-    box-shadow: 2.4rem 2.4rem 0 rgb(104 55 143 / 0.32);
+    background: rgb(var(--color-foreground) / 0.08);
+    box-shadow: 2.4rem 2.4rem 0 rgb(110 102 82 / 0.32);
   }
 
   .kotkoa-about__portrait::after {
@@ -80,6 +79,10 @@
     display: block;
   }
 
+  .kotkoa-about__portrait-caption {
+    color: #fff;
+  }
+
   .kotkoa-about__portrait-caption span {
     font-family: var(--font-heading-family);
     font-size: clamp(2.6rem, 3.4vw, 4.6rem);
@@ -99,11 +102,11 @@
 
   .kotkoa-about__portrait-caption small {
     margin-top: 0.9rem;
-    color: #d7aaff;
+    color: rgb(255 255 255 / 0.8);
   }
 
   .kotkoa-about__eyebrow {
-    color: #58a6ff;
+    color: rgb(var(--color-foreground) / 0.7);
   }
 
   .kotkoa-about__heading {
@@ -119,7 +122,7 @@
 
   .kotkoa-about__text {
     max-width: 64rem;
-    color: rgb(247 244 239 / 0.83);
+    color: rgb(var(--color-foreground) / 0.8);
     font-size: clamp(1.7rem, 1.6vw, 2.1rem);
     line-height: 1.5;
   }
@@ -132,15 +135,17 @@
     display: inline-block;
     margin-top: 1.6rem;
     padding: 1.4rem 2.1rem;
-    border: 1px solid #f7f4ef;
-    color: #f7f4ef;
+    border: 1px solid #6e6652;
+    background: #6e6652;
+    color: #fff;
     text-decoration: none;
-    transition: background-color 160ms ease, color 160ms ease;
+    transition: background-color 160ms ease, border-color 160ms ease;
   }
 
   .kotkoa-about__link:hover {
-    background: #f7f4ef;
-    color: #050505;
+    border-color: #4f4939;
+    background: #4f4939;
+    color: #fff;
   }
 
   @media screen and (max-width: 989px) {
@@ -152,7 +157,7 @@
     .kotkoa-about { padding: 4rem 0 5.5rem; }
     .kotkoa-about__inner { grid-template-columns: 1fr; gap: 4.8rem; }
     .kotkoa-about__portrait, .kotkoa-about__image { min-height: 45rem; }
-    .kotkoa-about__portrait { border-radius: 3.2rem 3.2rem 3.2rem 6.4rem; box-shadow: 1.3rem 1.3rem 0 rgb(104 55 143 / 0.3); }
+    .kotkoa-about__portrait { border-radius: 3.2rem 3.2rem 3.2rem 6.4rem; box-shadow: 1.3rem 1.3rem 0 rgb(110 102 82 / 0.3); }
     .kotkoa-about__heading { font-size: clamp(4.4rem, 14vw, 6.2rem); }
   }
 {% endstylesheet %}
@@ -163,6 +168,7 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "image_picker", "id": "image", "label": "Portrait or studio image" },
     { "type": "text", "id": "image_alt", "label": "Fallback image description", "default": "Botanical art in the KOTKOA studio" },
     { "type": "text", "id": "caption_name", "label": "Image caption name", "default": "KOTKOA Studio" },
