@@ -105,57 +105,6 @@
         "padding_bottom": 16
       }
     },
-    "collection_grid": {
-      "type": "kotkoa-collection-grid",
-      "blocks": {
-        "collection_1": {
-          "type": "collection",
-          "settings": {
-            "collection": "lavender",
-            "title": "Lavender",
-            "link": "shopify://collections/lavender"
-          }
-        },
-        "collection_2": {
-          "type": "collection",
-          "settings": {
-            "collection": "lemon",
-            "title": "Lemon",
-            "link": ""
-          }
-        },
-        "collection_3": {
-          "type": "collection",
-          "settings": {
-            "collection": "tropical",
-            "title": "Tropical",
-            "link": ""
-          }
-        },
-        "collection_4": {
-          "type": "collection",
-          "settings": {
-            "collection": "grape-olive",
-            "title": "Grape & Olive",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_1",
-        "collection_2",
-        "collection_3",
-        "collection_4"
-      ],
-      "settings": {
-        "heading": "Shop by collection",
-        "columns_desktop": "4",
-        "heading_size": "h1",
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
     "best_sellers": {
       "type": "kotkoa-collection-grid",
       "blocks": {
@@ -210,6 +159,57 @@
       "settings": {
         "heading": "Best sellers",
         "columns_desktop": "5",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "collection_grid": {
+      "type": "kotkoa-collection-grid",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "collection": "lavender",
+            "title": "Lavender",
+            "link": "shopify://collections/lavender"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "collection": "lemon",
+            "title": "Lemon",
+            "link": ""
+          }
+        },
+        "collection_3": {
+          "type": "collection",
+          "settings": {
+            "collection": "tropical",
+            "title": "Tropical",
+            "link": ""
+          }
+        },
+        "collection_4": {
+          "type": "collection",
+          "settings": {
+            "collection": "grape-olive",
+            "title": "Grape & Olive",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2",
+        "collection_3",
+        "collection_4"
+      ],
+      "settings": {
+        "heading": "Shop by collection",
+        "columns_desktop": "4",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
         "padding_top": 32,
@@ -350,8 +350,8 @@
   "order": [
     "image_banner",
     "icon_features",
-    "collection_grid",
     "best_sellers",
+    "collection_grid",
     "seasonal_collections",
     "editorial_columns",
     "trust_strip"
