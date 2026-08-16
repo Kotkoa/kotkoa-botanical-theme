@@ -12,30 +12,33 @@
         {% for block in section.blocks %}
           {% liquid
             assign card_title = block.settings.title
+            assign card_accessible_title = card_title
             assign card_url = block.settings.link
             assign card_image = block.settings.image
 
             if block.settings.collection != blank
-              if card_title == blank
-                assign card_title = block.settings.collection.title
+              if card_accessible_title == blank
+                assign card_accessible_title = block.settings.collection.title
               endif
               if card_url == blank
                 assign card_url = block.settings.collection.url
               endif
               if card_image == blank
-                assign card_image = block.settings.collection.featured_image
+                unless block.settings.use_hero_image
+                  assign card_image = block.settings.collection.featured_image
+                endunless
               endif
             endif
           %}
           <article class="seasonal-collections__card" {{ block.shopify_attributes }}>
             {% if card_url != blank %}
-              <a class="seasonal-collections__link" href="{{ card_url }}" aria-label="{{ card_title | escape }}">
+              <a class="seasonal-collections__link" href="{{ card_url }}" aria-label="{{ card_accessible_title | escape }}">
             {% endif %}
               <div class="seasonal-collections__media">
                 {% if card_image != blank %}
-                  {{ card_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '180, 280, 400, 600, 800', sizes: '(min-width: 990px) 16vw, 33vw', alt: card_title }}
+                  {{ card_image | image_url: width: 2000 | image_tag: loading: 'lazy', widths: '400, 600, 800, 1200, 1600, 2000', sizes: '(min-width: 750px) calc(100vw - 10rem), calc(100vw - 4.8rem)', alt: card_accessible_title }}
                 {% else %}
-                  <img src="{{ 'best-seller-placeholder.jpg' | asset_url }}" width="1024" height="1280" loading="lazy" alt="">
+                  <img src="{{ 'botanical-hero-image.png' | asset_url }}" width="1915" height="821" loading="lazy" alt="{{ card_accessible_title | escape }}">
                 {% endif %}
               </div>
               {% if card_title != blank %}
@@ -86,7 +89,7 @@
 
   .seasonal-collections__items {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
     gap: 1rem;
   }
 
@@ -101,6 +104,11 @@
     border-radius: 4px;
     aspect-ratio: 1 / 1;
     background: rgb(var(--color-foreground) / 0.06);
+  }
+
+  .seasonal-collections__card:only-child .seasonal-collections__media {
+    height: 175px;
+    aspect-ratio: auto;
   }
 
   .seasonal-collections__media img {
@@ -134,7 +142,6 @@
     }
 
     .seasonal-collections__items {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.2rem 0.8rem;
     }
   }
@@ -166,6 +173,7 @@
       "settings": [
         { "type": "collection", "id": "collection", "label": "t:sections.seasonal_collections.blocks.collection.settings.collection.label" },
         { "type": "image_picker", "id": "image", "label": "t:sections.seasonal_collections.blocks.collection.settings.image.label" },
+        { "type": "checkbox", "id": "use_hero_image", "label": "t:sections.seasonal_collections.blocks.collection.settings.use_hero_image.label", "default": false },
         { "type": "text", "id": "title", "label": "t:sections.seasonal_collections.blocks.collection.settings.title.label" },
         { "type": "url", "id": "link", "label": "t:sections.seasonal_collections.blocks.collection.settings.link.label" }
       ]

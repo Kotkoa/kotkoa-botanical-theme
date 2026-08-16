@@ -452,6 +452,7 @@
           "settings": {
             "collection": { "label": "Collection" },
             "image": { "label": "Image override" },
+            "use_hero_image": { "label": "Use botanical hero image" },
             "title": { "label": "Title override" },
             "link": { "label": "Link override" }
           }
