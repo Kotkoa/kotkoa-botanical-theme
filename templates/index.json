@@ -161,8 +161,8 @@
         "columns_desktop": "5",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "collection_grid": {
@@ -212,8 +212,8 @@
         "columns_desktop": "4",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "seasonal_collections": {
@@ -221,14 +221,16 @@
       "blocks": {
         "autumn": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "autumn",
-            "title": "Autumn",
+            "title": "lavender",
             "link": ""
           }
         },
         "christmas": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "christmas",
             "title": "Christmas",
@@ -237,6 +239,7 @@
         },
         "winter": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "winter",
             "title": "Winter",
@@ -245,6 +248,7 @@
         },
         "valentines_day": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "valentines-day",
             "title": "Valentine's day",
@@ -253,6 +257,7 @@
         },
         "easter": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "easter",
             "title": "Easter",
@@ -263,7 +268,7 @@
           "type": "collection",
           "settings": {
             "collection": "summer",
-            "title": "Summer",
+            "title": "",
             "link": ""
           }
         }
@@ -277,10 +282,10 @@
         "summer"
       ],
       "settings": {
-        "heading": "Seasonal collections",
+        "heading": "digital collections",
         "subheading": "Celebrate every season with botanical charm",
         "color_scheme": "scheme-1",
-        "padding_top": 32,
+        "padding_top": 16,
         "padding_bottom": 32
       }
     },
