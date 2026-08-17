@@ -437,6 +437,20 @@
         }
       }
     },
+    "digital_collections": {
+      "name": "Digital collections",
+      "settings": {
+        "image": { "label": "Background image" },
+        "link": { "label": "Collection link" },
+        "eyebrow": { "label": "Eyebrow" },
+        "heading": { "label": "Heading" },
+        "accent_text": { "label": "Accent text" },
+        "description": { "label": "Description" },
+        "color_scheme": { "label": "Color scheme" },
+        "padding_top": { "label": "Top padding" },
+        "padding_bottom": { "label": "Bottom padding" }
+      }
+    },
     "seasonal_collections": {
       "name": "Seasonal collections",
       "settings": {

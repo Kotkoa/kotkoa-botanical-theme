@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -55,6 +64,9 @@
       "next_slide": "右にスライド",
       "previous_slide": "左にスライド",
       "name": "スライダー"
+    },
+    "brand": {
+      "tagline": "ボタニカルアート＆ライフ"
     }
   },
   "newsletter": {
@@ -375,6 +387,202 @@
       "min_error": "このアイテムの最小値は{{ min }}です",
       "max_error": "このアイテムの最大値は{{ max }}です",
       "step_error": "このアイテムは、{{ step }}の増分でのみ追加できます"
+    },
+    "trust_strip": {
+      "name": "トラストストリップ",
+      "settings": {
+        "color_scheme": {
+          "label": "配色"
+        },
+        "padding_top": {
+          "label": "上パディング"
+        },
+        "padding_bottom": {
+          "label": "下部パディング"
+        }
+      },
+      "blocks": {
+        "benefit": {
+          "name": "利益",
+          "settings": {
+            "heading": {
+              "label": "見出し"
+            },
+            "text": {
+              "label": "概要"
+            }
+          }
+        }
+      }
+    },
+    "editorial_columns": {
+      "name": "社説",
+      "settings": {
+        "image": {
+          "label": "画像"
+        },
+        "image_alt": {
+          "label": "画像の説明"
+        },
+        "brand_color_scheme": {
+          "label": "ブランド列のカラースキーム"
+        },
+        "library_color_scheme": {
+          "label": "ライブラリ列の配色"
+        },
+        "brand_heading": {
+          "label": "ブランド見出し"
+        },
+        "brand_text": {
+          "label": "ブランドテキスト"
+        },
+        "brand_link_label": {
+          "label": "ブランドリンクのラベル"
+        },
+        "brand_link": {
+          "label": "ブランドリンク"
+        },
+        "library_heading": {
+          "label": "図書館見出し"
+        },
+        "library_text": {
+          "label": "図書館のテキスト"
+        },
+        "library_link_label": {
+          "label": "ライブラリリンクのラベル"
+        },
+        "library_link": {
+          "label": "ライブラリのリンク"
+        }
+      }
+    },
+    "collection_grid": {
+      "name": "コレクション グリッド",
+      "settings": {
+        "heading": {
+          "label": "見出し"
+        },
+        "columns_desktop": {
+          "label": "デスクトップ版の列表示"
+        },
+        "heading_size": {
+          "label": "見出しサイズ",
+          "options": {
+            "small": "小さい",
+            "medium": "媒体",
+            "large": "大"
+          }
+        },
+        "color_scheme": {
+          "label": "配色"
+        },
+        "padding_top": {
+          "label": "上部のパディング"
+        },
+        "padding_bottom": {
+          "label": "下パディング"
+        }
+      },
+      "blocks": {
+        "collection": {
+          "name": "コレクションカード",
+          "settings": {
+            "collection": {
+              "label": "コレクション"
+            },
+            "image": {
+              "label": "画像オーバーライド"
+            },
+            "title": {
+              "label": "タイトルの上書き"
+            },
+            "link": {
+              "label": "リンク上書き"
+            }
+          }
+        }
+      },
+      "shop_now": "今すぐ購入"
+    },
+    "seasonal_collections": {
+      "name": "季節限定コレクション",
+      "settings": {
+        "heading": {
+          "label": "見出し"
+        },
+        "subheading": {
+          "label": "小見出し"
+        },
+        "color_scheme": {
+          "label": "配色"
+        },
+        "padding_top": {
+          "label": "上部の余白"
+        },
+        "padding_bottom": {
+          "label": "下パディング"
+        }
+      },
+      "blocks": {
+        "collection": {
+          "name": "シーズンコレクション",
+          "settings": {
+            "collection": {
+              "label": "コレクション"
+            },
+            "image": {
+              "label": "画像オーバーライド"
+            },
+            "title": {
+              "label": "タイトルの上書き"
+            },
+            "link": {
+              "label": "リンクオーバーライド"
+            }
+          }
+        }
+      }
+    },
+    "icon_features": {
+      "name": "アイコンの機能",
+      "settings": {
+        "heading": {
+          "label": "見出し"
+        },
+        "heading_size": {
+          "label": "見出しサイズ",
+          "options": {
+            "small": "小さい",
+            "medium": "媒体",
+            "large": "大"
+          }
+        },
+        "color_scheme": {
+          "label": "配色"
+        },
+        "padding_top": {
+          "label": "上余白"
+        },
+        "padding_bottom": {
+          "label": "下パディング"
+        }
+      },
+      "blocks": {
+        "feature": {
+          "name": "機能",
+          "settings": {
+            "icon": {
+              "label": "アイコン"
+            },
+            "heading": {
+              "label": "見出し"
+            },
+            "text": {
+              "label": "概要"
+            }
+          }
+        }
+      }
     }
   },
   "localization": {

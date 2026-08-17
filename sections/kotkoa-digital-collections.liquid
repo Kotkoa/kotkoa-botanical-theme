@@ -1,0 +1,236 @@
+<section
+  class="digital-collections color-{{ section.settings.color_scheme }} gradient"
+  style="--digital-collections-padding-top: {{ section.settings.padding_top }}px; --digital-collections-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  {{ section.shopify_attributes }}
+>
+  <div class="page-width">
+    {% if section.settings.link != blank %}
+      <a class="digital-collections__banner" href="{{ section.settings.link }}">
+    {% else %}
+      <div class="digital-collections__banner">
+    {% endif %}
+      <div class="digital-collections__media" aria-hidden="true">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '750, 1100, 1500, 1800, 2205, 2400', sizes: '(min-width: 1300px) 1200px, calc(100vw - 3rem)', alt: '' }}
+        {% else %}
+          <img
+            src="{{ 'digital-collections-banner.jpg' | asset_url }}"
+            width="2205"
+            height="692"
+            loading="lazy"
+            alt=""
+          >
+        {% endif %}
+      </div>
+
+      <div class="digital-collections__content">
+        {% if section.settings.eyebrow != blank %}
+          <p class="digital-collections__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="digital-collections__heading">{{ section.settings.heading | escape }}</h2>
+        {% endif %}
+        {% if section.settings.accent_text != blank %}
+          <p class="digital-collections__accent">{{ section.settings.accent_text | escape }}</p>
+        {% endif %}
+        <span class="digital-collections__ornament" aria-hidden="true">
+          <span></span>
+          <svg viewBox="0 0 72 24" role="presentation">
+            <path d="M36 20V4M36 8c-7 0-11-3-14-7 7 0 11 3 14 7Zm0 4c7 0 11-3 14-7-7 0-11 3-14 7Zm0 4c-7 0-11-3-14-7 7 0 11 3 14 7Zm0 4c7 0 11-3 14-7-7 0-11 3-14 7Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span></span>
+        </span>
+        {% if section.settings.description != blank %}
+          <p class="digital-collections__description">{{ section.settings.description | escape | newline_to_br }}</p>
+        {% endif %}
+      </div>
+    {% if section.settings.link != blank %}
+      </a>
+    {% else %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% stylesheet %}
+  .digital-collections {
+    padding-top: var(--digital-collections-padding-top);
+    padding-bottom: var(--digital-collections-padding-bottom);
+  }
+
+  .digital-collections__banner {
+    position: relative;
+    display: grid;
+    min-height: 32rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    aspect-ratio: 2205 / 692;
+    color: #ffffff;
+    text-decoration: none;
+    isolation: isolate;
+  }
+
+  .digital-collections__media {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+  }
+
+  .digital-collections__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 450ms ease;
+  }
+
+  .digital-collections__content {
+    position: relative;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+    width: min(58%, 68rem);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .digital-collections__eyebrow {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 1.2rem;
+    gap: 2.4rem;
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.3rem, 1.4vw, 1.8rem);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: 0.18em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .digital-collections__eyebrow::before,
+  .digital-collections__eyebrow::after {
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+    content: '';
+    opacity: 0.65;
+  }
+
+  .digital-collections__heading {
+    margin: 0;
+    color: #a9ffff;
+    font-family: var(--font-heading-family);
+    font-size: clamp(4rem, 5vw, 7rem);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: 0.025em;
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+
+  .digital-collections__accent {
+    margin: 0.2rem 0 1.4rem;
+    color: #a9ffff;
+    font-family: 'Snell Roundhand', 'Segoe Script', 'Brush Script MT', cursive;
+    font-size: clamp(3rem, 3.8vw, 5.2rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+  }
+
+  .digital-collections__ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(32rem, 70%);
+    margin-bottom: 1.4rem;
+    gap: 1.2rem;
+  }
+
+  .digital-collections__ornament span {
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.65;
+  }
+
+  .digital-collections__ornament svg {
+    width: 5rem;
+    height: auto;
+  }
+
+  .digital-collections__description {
+    margin: 0;
+    max-width: 48rem;
+    font-family: var(--font-body-family);
+    font-size: clamp(1.2rem, 1.25vw, 1.6rem);
+    font-style: var(--font-body-style);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.55;
+  }
+
+  .digital-collections__banner:hover .digital-collections__media img {
+    transform: scale(1.02);
+  }
+
+  .digital-collections__banner:focus-visible {
+    outline: 0.3rem solid rgb(var(--color-foreground));
+    outline-offset: 0.3rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .digital-collections__banner {
+      min-height: 42rem;
+      aspect-ratio: auto;
+    }
+
+    .digital-collections__content {
+      width: 92%;
+      padding: 3rem 1.6rem;
+    }
+
+    .digital-collections__eyebrow {
+      gap: 1rem;
+    }
+
+    .digital-collections__description {
+      max-width: 30rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .digital-collections__media img {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.digital_collections.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "t:sections.digital_collections.settings.image.label" },
+    { "type": "url", "id": "link", "label": "t:sections.digital_collections.settings.link.label" },
+    { "type": "text", "id": "eyebrow", "label": "t:sections.digital_collections.settings.eyebrow.label", "default": "Digital collections" },
+    { "type": "text", "id": "heading", "label": "t:sections.digital_collections.settings.heading.label", "default": "Botanical art" },
+    { "type": "text", "id": "accent_text", "label": "t:sections.digital_collections.settings.accent_text.label", "default": "for every season" },
+    { "type": "textarea", "id": "description", "label": "t:sections.digital_collections.settings.description.label", "default": "Beautiful botanical illustrations for your creative projects — instant download, print and enjoy." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.digital_collections.settings.color_scheme.label", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "label": "t:sections.digital_collections.settings.padding_top.label", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 16 },
+    { "type": "range", "id": "padding_bottom", "label": "t:sections.digital_collections.settings.padding_bottom.label", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 32 }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.digital_collections.name"
+    }
+  ]
+}
+{% endschema %}
