@@ -136,6 +136,7 @@
           "type": "collection",
           "settings": {
             "collection": "wrapping-paper",
+            "image": "shopify://shop_images/1111.jpg",
             "title": "Wrapping Paper",
             "link": ""
           }
@@ -144,6 +145,7 @@
           "type": "collection",
           "settings": {
             "collection": "wall-art",
+            "image": "shopify://shop_images/899877b5-1a2e-4680-b51b-3ada4a611aa5.png",
             "title": "Wall Art",
             "link": ""
           }
@@ -168,11 +170,20 @@
     "collection_grid": {
       "type": "kotkoa-collection-grid",
       "blocks": {
+        "collection_kzWfag": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/2e2a0d31-95ab-4763-9971-3044dd59d5fc.png",
+            "title": "Christmas",
+            "link": ""
+          }
+        },
         "collection_1": {
           "type": "collection",
           "settings": {
             "collection": "lavender",
-            "image": "shopify://shop_images/lavender.jpg",
+            "image": "shopify://shop_images/700b4df5-9f3f-4d77-8211-6d097f31c072.png",
             "title": "Lavender",
             "link": "shopify://collections/lavender"
           }
@@ -181,7 +192,7 @@
           "type": "collection",
           "settings": {
             "collection": "lemon",
-            "image": "shopify://shop_images/lemon.jpg",
+            "image": "shopify://shop_images/eeda4b69-a428-4f66-9e39-540220e850b2.png",
             "title": "Lemon",
             "link": ""
           }
@@ -190,7 +201,7 @@
           "type": "collection",
           "settings": {
             "collection": "tropical",
-            "image": "shopify://shop_images/toile_de_jou.jpg",
+            "image": "shopify://shop_images/a26c9d23-047d-4bbc-9b04___-fcc6de0aad68.jpg",
             "title": "TOILE DE YOUY",
             "link": ""
           }
@@ -199,13 +210,14 @@
           "type": "collection",
           "settings": {
             "collection": "grape-olive",
-            "image": "shopify://shop_images/olives.jpg",
+            "image": "shopify://shop_images/7d556a6a-68db-41cc-be25-ad0928f89791_cd9070c8-7d03-4314-b7d9-f9a35cab38d9.png",
             "title": "Grape & Olive",
             "link": ""
           }
         }
       },
       "block_order": [
+        "collection_kzWfag",
         "collection_1",
         "collection_2",
         "collection_3",
@@ -213,7 +225,7 @@
       ],
       "settings": {
         "heading": "Shop by collection",
-        "columns_desktop": "4",
+        "columns_desktop": "5",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
         "padding_top": 0,
@@ -223,7 +235,7 @@
     "seasonal_collections": {
       "type": "kotkoa-digital-collections",
       "settings": {
-        "image": "shopify://shop_images/11111.jpg",
+        "image": "shopify://shop_images/68fa6b27-c92b-11118af-bfce-659ee0fb7f3b.jpg",
         "link": "shopify://collections/summer",
         "eyebrow": "Digital collections",
         "heading": "Botanical art",
@@ -231,7 +243,7 @@
         "description": "Beautiful botanical illustrations for your creative projects — instant download, print and enjoy.",
         "color_scheme": "scheme-1",
         "padding_top": 16,
-        "padding_bottom": 32
+        "padding_bottom": 36
       }
     },
     "editorial_columns": {
