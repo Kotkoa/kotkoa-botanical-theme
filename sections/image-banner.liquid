@@ -39,11 +39,11 @@
     letter-spacing: 0.12em;
   }
 
-  @media screen and (min-width: 750px) {
-    #Banner-{{ section.id }},
-    #Banner-{{ section.id }} .banner__media {
-      min-height: 550px;
-    }
+  #Banner-{{ section.id }},
+  #Banner-{{ section.id }} .banner__media,
+  #Banner-{{ section.id }} .banner__content {
+    height: 250px;
+    min-height: 250px;
   }
 {%- endstyle -%}
 
