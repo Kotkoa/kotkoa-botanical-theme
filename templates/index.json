@@ -46,6 +46,7 @@
         "button"
       ],
       "settings": {
+        "image": "shopify://shop_images/avender_top__1.jpg",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "image_behavior": "none",
@@ -172,7 +173,7 @@
           "type": "collection",
           "settings": {
             "collection": "lavender",
-            "image": "shopify://shop_images/lavender.jpg",
+            "image": "shopify://shop_images/700b4df5-9f3f-4d77-8211-6d097f31c072.png",
             "title": "Lavender",
             "link": "shopify://collections/lavender"
           }
@@ -181,7 +182,7 @@
           "type": "collection",
           "settings": {
             "collection": "lemon",
-            "image": "shopify://shop_images/lemon.jpg",
+            "image": "shopify://shop_images/e807b8eb-81fb__-4035-8ebc-044890825e97.jpg",
             "title": "Lemon",
             "link": ""
           }
@@ -190,7 +191,7 @@
           "type": "collection",
           "settings": {
             "collection": "tropical",
-            "image": "shopify://shop_images/toile_de_jou.jpg",
+            "image": "shopify://shop_images/2e2a0d31-95ab-4763-9971-3044dd59d5fc.png",
             "title": "TOILE DE YOUY",
             "link": ""
           }
@@ -199,7 +200,7 @@
           "type": "collection",
           "settings": {
             "collection": "grape-olive",
-            "image": "shopify://shop_images/olives.jpg",
+            "image": "shopify://shop_images/19ea59f8-1ae2-4830-a9c3-f5e772ad5efc.png",
             "title": "Grape & Olive",
             "link": ""
           }
@@ -223,7 +224,7 @@
     "seasonal_collections": {
       "type": "kotkoa-digital-collections",
       "settings": {
-        "image": "shopify://shop_images/11111.jpg",
+        "image": "shopify://shop_images/c801f250-b900-4b55-addd-81de066ad0dc.png",
         "link": "shopify://collections/summer",
         "eyebrow": "Digital collections",
         "heading": "Botanical art",
