@@ -5,6 +5,7 @@
 `kotkoa-botanical-theme` is the Shopify theme for **kotkoa.com** (shop.kotkoa.com), a Printify-fulfilled microstock-themed store (pillow covers, wrapping paper, wall art, table linens, bags, digital collections — botanical/nature imagery from the owner's own microstock photography).
 
 - Products are print-on-demand via Printify: variants are usually sizes of the same artwork, and product media often contains near-duplicate Printify mockups per size that need SEO cleanup (see `docs/image-seo-update-plan.md` for the active image/alt-text/filename audit workflow — read it before touching product media, filenames, or alt text).
+- An image SEO cleanup is in progress in `audits/` — read `audits/CLAUDE.md` before touching product media, filenames, or alt text. That directory (and its CLAUDE.md) is scratch state and will be deleted once the cleanup is finished.
 - No other project-specific conventions beyond the general Shopify theme practices below.
 
 🚨 MANDATORY: YOU MUST CALL "learn_shopify_api" ONCE WHEN WORKING WITH LIQUID THEMES.
