@@ -1,6 +1,6 @@
 <section
   class="digital-collections color-{{ section.settings.color_scheme }} gradient"
-  style="--digital-collections-padding-top: {{ section.settings.padding_top }}px; --digital-collections-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  style="--digital-collections-padding-top: {{ section.settings.padding_top }}px; --digital-collections-padding-bottom: {{ section.settings.padding_bottom }}px; --digital-collections-image-ratio: {{ section.settings.image.aspect_ratio | default: 3.186 }};"
   {{ section.shopify_attributes }}
 >
   <div class="page-width">
@@ -61,11 +61,11 @@
   .digital-collections__banner {
     position: relative;
     display: grid;
-    min-height: 32rem;
+    min-height: 0;
     overflow: hidden;
     border-radius: 1rem;
-    aspect-ratio: 2205 / 692;
-    color: #ffffff;
+    aspect-ratio: var(--digital-collections-image-ratio);
+    color: #000000;
     text-decoration: none;
     isolation: isolate;
   }
@@ -80,7 +80,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     transition: transform 450ms ease;
   }
@@ -123,7 +123,7 @@
 
   .digital-collections__heading {
     margin: 0;
-    color: #a9ffff;
+    color: #000000;
     font-family: var(--font-heading-family);
     font-size: clamp(4rem, 5vw, 7rem);
     font-style: var(--font-heading-style);
@@ -135,7 +135,7 @@
 
   .digital-collections__accent {
     margin: 0.2rem 0 1.4rem;
-    color: #a9ffff;
+    color: #000000;
     font-family: 'Snell Roundhand', 'Segoe Script', 'Brush Script MT', cursive;
     font-size: clamp(3rem, 3.8vw, 5.2rem);
     font-weight: 400;
@@ -177,6 +177,44 @@
 
   .digital-collections__banner:hover .digital-collections__media img {
     transform: scale(1.02);
+  }
+
+  @media screen and (min-width: 750px) {
+    .digital-collections__content {
+      width: min(64%, 68rem);
+      padding: 1rem 2rem;
+    }
+
+    .digital-collections__eyebrow {
+      margin-bottom: 0.4rem;
+      gap: 1.6rem;
+      font-size: clamp(1.1rem, 1vw, 1.4rem);
+    }
+
+    .digital-collections__heading {
+      font-size: clamp(3rem, 3.8vw, 5.2rem);
+      line-height: 0.9;
+    }
+
+    .digital-collections__accent {
+      margin: 0 0 0.4rem;
+      font-size: clamp(2.4rem, 2.8vw, 3.8rem);
+    }
+
+    .digital-collections__ornament {
+      width: min(24rem, 60%);
+      margin-bottom: 0.4rem;
+      gap: 0.8rem;
+    }
+
+    .digital-collections__ornament svg {
+      width: 3rem;
+    }
+
+    .digital-collections__description {
+      font-size: clamp(1.1rem, 0.9vw, 1.3rem);
+      line-height: 1.35;
+    }
   }
 
   .digital-collections__banner:focus-visible {
