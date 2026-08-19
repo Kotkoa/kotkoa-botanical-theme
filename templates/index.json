@@ -17,7 +17,7 @@
           "settings": {
             "heading": "Botanical beauty",
             "heading_line_2": "for everyday life",
-            "heading_size": "h0"
+            "heading_size": "h1"
           }
         },
         "text": {
@@ -30,6 +30,7 @@
         },
         "button": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "Shop the collections",
             "button_link_1": "shopify://collections/all",
@@ -224,8 +225,8 @@
     "seasonal_collections": {
       "type": "kotkoa-digital-collections",
       "settings": {
-        "image": "shopify://shop_images/botanical-digital-collections-banner.png",
-        "link": "shopify://collections/summer",
+        "image": "shopify://shop_images/c24dca61-a730-42___83-84ed-b4c3d13e348f.jpg",
+        "link": "shopify://collections/botanical-clipart-photo-collections",
         "eyebrow": "Digital collections",
         "heading": "Botanical art",
         "accent_text": "for every season",
