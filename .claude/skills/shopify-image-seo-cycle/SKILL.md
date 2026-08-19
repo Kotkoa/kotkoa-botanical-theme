@@ -24,7 +24,11 @@ One product handle per cycle. Artifacts in `audits/image-seo/`:
 - Stop on any GraphQL top-level error, `userErrors`, state mismatch, or ambiguous mapping.
 - Never print `.env` values, tokens, or secrets.
 
-## Auth (phases 1 and 3)
+## Auth (phases 1 and 3) — one token per session, reused across products
+
+Get the token **once**, on the first phase-1 or phase-3 call of the session, and reuse the same
+scratchpad token file for every subsequent audit/approve/apply call — across multiple products —
+until the session ends. Do not re-auth between phases or between products as a matter of routine.
 
 ```bash
 set -a; source .env; set +a
@@ -33,7 +37,12 @@ TOKEN=$(curl -s -X POST "https://${SHOPIFY_STORE}/admin/oauth/access_token" \
   -d "grant_type=client_credentials&client_id=${SHOPIFY_CLIENT_ID}&client_secret=${SHOPIFY_CLIENT_SECRET}" \
   | python3 -c "import json,sys; print(json.load(sys.stdin)['access_token'])")
 ```
-Write `$TOKEN` to a scratchpad file (chmod 600), never echo it. Delete it at the end.
+Write `$TOKEN` to a scratchpad file (chmod 600), never echo it. Before reusing it in a later call,
+check the token file still exists; if it doesn't, re-run the auth step. If any GraphQL call in this
+skill returns 401/`UNAUTHORIZED`, treat it as expired: silently re-run the auth step to get a fresh
+token, overwrite the scratchpad file, and retry that one call — this is not a failure to report,
+just a refresh. Delete the scratch token file only at the very end of the session (last apply of the
+last product in this batch), not after each phase or each product.
 
 GraphQL call shape (reuse for every query/mutation):
 ```bash
@@ -53,7 +62,7 @@ query { productByIdentifier(identifier:{handle:"HANDLE"}) {
 
 ## /image-1-audit `<handle>` [observations]
 
-1. Auth, run the product query, save to `backups/<slug>-admin-readonly-<date>.json` **wrapped in `{"data": ...}`** (validator requires it).
+1. Reuse the session token if one exists (see Auth above); otherwise auth once. Run the product query, save to `backups/<slug>-admin-readonly-<date>.json` **wrapped in `{"data": ...}`** (validator requires it).
 2. Download every `image.url` with curl into the scratchpad; `shasum -a 256` all of them.
 3. Build a contact sheet and **look at it** (PIL thumbnails side by side, or `montage`). Identical SHA = duplicate; different SHA ≠ unique scene — still compare visually.
 4. Check the live storefront (chrome-devtools `navigate_page` + `take_snapshot`) for the default variant; note that per-variant galleries make storefront count differ from Admin count.
@@ -91,7 +100,7 @@ set `"status":"approved-not-applied"`, mark the Markdown approved, rerun the val
 ## /image-3-apply `<handle>`
 
 1. Rerun validator with `--require-approved`. Abort on failure.
-2. Auth, fetch a fresh snapshot → `backups/<slug>-apply-<date>/before.json`.
+2. Reuse the session token if one exists (see Auth above); otherwise auth once. Fetch a fresh snapshot → `backups/<slug>-apply-<date>/before.json`.
 3. Assert against the plan before writing: handle, productId, current media set == keep ∪ detach,
    every `detachMediaId` currently attached to its variant, every `appendMediaId` in keep.
 4. Mutate in this order, saving each response and checking `errors` + `userErrors` are empty after each:
@@ -117,6 +126,7 @@ mutation($files:[FileUpdateInput!]!){
 7. Storefront check with chrome-devtools on **each** changed variant URL: correct gallery, new filenames
    in image URLs, correct alt, no duplicate scene.
 8. Only if everything passes: write `summary.json`, set plan `"applied-success"`, add a Result section
-   to the Markdown. Delete the scratch token.
+   to the Markdown. Keep the scratch token file for reuse by the next product in this session; delete
+   it only when the user indicates this is the last product for now.
 9. On any failure: stop, keep all evidence, report the exact mismatch, do not touch another product.
    Roll back only from this run's `before.json`, after explaining the plan.
