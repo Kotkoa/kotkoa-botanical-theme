@@ -1,0 +1,15 @@
+.license-note {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.license-note p {
+  margin: 0 0 0.5rem;
+}
+
+.license-note__link {
+  color: currentColor;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}

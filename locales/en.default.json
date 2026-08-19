@@ -119,6 +119,13 @@
       "inventory_low_stock_show_count": "Low stock: {{ quantity }} left",
       "inventory_out_of_stock": "Out of stock",
       "inventory_out_of_stock_continue_selling": "In stock",
+      "license": {
+        "standard_title": "Standard License —",
+        "standard_description": "for personal and commercial projects with up to 5,000 sales of physical or digital end-products.",
+        "extended_title": "Extended License —",
+        "extended_description": "unlimited sales, no cap on the number of end-products sold or distributed.",
+        "full_terms_link": "Full license terms →"
+      },
       "sku": "SKU",
       "on_sale": "Sale",
       "product_variants": "Product variants",
