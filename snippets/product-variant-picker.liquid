@@ -99,14 +99,25 @@
     </script>
   </variant-selects>
 
-  {%- assign license_option_index = product.options | map: 'downcase' | find_index: 'license' -%}
-  {%- if license_option_index != blank -%}
+  {%- liquid
+    assign license_option_index = -1
+    for option_name in product.options
+      assign option_name_downcase = option_name | downcase
+      if option_name_downcase == 'license'
+        assign license_option_index = forloop.index0
+        break
+      endif
+    endfor
+  -%}
+  {%- if license_option_index >= 0 -%}
     {%- liquid
       assign selected_license = product.selected_or_first_available_variant.options[license_option_index] | downcase
     -%}
     <div
+      id="LicenseNote-{{ section.id }}"
       class="license-note caption"
       data-license-note
+      data-license-section="{{ section.id }}"
       data-license-option-index="{{ license_option_index }}"
       aria-live="polite"
       {% if selected_license == blank %}hidden{% endif %}

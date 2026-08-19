@@ -11,7 +11,7 @@ function updateLicenseNote(container, licenseValue) {
 }
 
 document.querySelectorAll('[data-license-note]').forEach((container) => {
-  const variantSelects = container.closest('variant-selects');
+  const variantSelects = container.previousElementSibling;
   const optionIndex = Number(container.dataset.licenseOptionIndex);
 
   const selectedVariantScript = variantSelects?.querySelector('[data-selected-variant]');
@@ -28,7 +28,7 @@ document.querySelectorAll('[data-license-note]').forEach((container) => {
 if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
   subscribe(PUB_SUB_EVENTS.variantChange, (event) => {
     const container = document.querySelector(
-      `#variant-selects-${event.data.sectionId} [data-license-note]`
+      `[data-license-note][data-license-section="${event.data.sectionId}"]`
     );
     if (!container) return;
 
