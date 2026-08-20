@@ -441,6 +441,12 @@
       "name": "Digital collections",
       "settings": {
         "image": { "label": "Background image" },
+        "image_position": {
+          "label": "Image focal point",
+          "options__1": { "label": "Left" },
+          "options__2": { "label": "Center" },
+          "options__3": { "label": "Right" }
+        },
         "link": { "label": "Collection link" },
         "eyebrow": { "label": "Eyebrow" },
         "heading": { "label": "Heading" },
