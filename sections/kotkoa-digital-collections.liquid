@@ -25,10 +25,10 @@
 
       <div class="digital-collections__content">
         {% if section.settings.eyebrow != blank %}
-          <p class="digital-collections__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+          <p class="digital-collections__eyebrow" data-eyebrow>{{ section.settings.eyebrow | escape }}</p>
         {% endif %}
         {% if section.settings.heading != blank %}
-          <h2 class="digital-collections__heading">{{ section.settings.heading | escape }}</h2>
+          <h2 class="digital-collections__heading" data-heading>{{ section.settings.heading | escape }}</h2>
         {% endif %}
         {% if section.settings.accent_text != blank %}
           <p class="digital-collections__accent">{{ section.settings.accent_text | escape }}</p>
@@ -102,9 +102,12 @@
   .digital-collections__eyebrow {
     display: flex;
     align-items: center;
-    width: 100%;
-    margin: 0 0 1.2rem;
-    gap: 2.4rem;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 1.2rem;
+    gap: 1.2rem;
+    white-space: nowrap;
     font-family: var(--font-heading-family);
     font-size: clamp(1.3rem, 1.4vw, 1.8rem);
     font-style: var(--font-heading-style);
@@ -116,7 +119,7 @@
 
   .digital-collections__eyebrow::before,
   .digital-collections__eyebrow::after {
-    flex: 1;
+    width: var(--digital-collections-line-width, 2.4rem);
     height: 1px;
     background: currentColor;
     content: '';
@@ -267,6 +270,23 @@
     }
   }
 {% endstylesheet %}
+
+{% javascript %}
+  function syncDigitalCollectionsLineWidth(section) {
+    const eyebrow = section.querySelector('[data-eyebrow]');
+    const heading = section.querySelector('[data-heading]');
+    if (!eyebrow || !heading) return;
+    eyebrow.style.setProperty('--digital-collections-line-width', `${heading.getBoundingClientRect().width * 0.198375}px`);
+  }
+
+  document.querySelectorAll('.digital-collections').forEach((section) => {
+    syncDigitalCollectionsLineWidth(section);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => syncDigitalCollectionsLineWidth(section));
+    }
+    window.addEventListener('resize', () => syncDigitalCollectionsLineWidth(section));
+  });
+{% endjavascript %}
 
 {% schema %}
 {
