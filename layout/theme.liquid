@@ -15,15 +15,28 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
+    {% liquid
+      assign seo_title = page_title
+      assign seo_description = page_description
+
+      if template == 'search'
+        assign seo_title = 'Search Results | Kotkoa Shop'
+        assign seo_description = 'Search Kotkoa Shop for Provence lavender and Mediterranean botanical home decor: pillow covers, tote bags, table runners, wall art, and digital clipart.'
+      elsif template == 'list-collections'
+        assign seo_title = 'All Collections | Kotkoa Shop'
+        assign seo_description = 'Browse all Kotkoa Shop collections: lavender, lemon, olive and floral botanical decor, bags, gift wrap and digital clipart for makers and designers.'
+      endif
+    %}
+
     <title>
-      {{ page_title }}
+      {{ seo_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- unless seo_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
+    {% if seo_description %}
+      <meta name="description" content="{{ seo_description | escape }}">
     {% endif %}
 
     {% render 'meta-tags' %}
