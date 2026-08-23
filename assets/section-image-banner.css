@@ -332,6 +332,23 @@
     order: 2;
   }
 
+  .banner:not(.banner--mobile-bottom) .banner__content {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .banner:not(.banner--mobile-bottom) .banner__box {
+    text-align: left;
+  }
+
+  .banner:not(.banner--mobile-bottom) .banner__heading {
+    font-size: calc(var(--font-heading-scale) * 2.4rem);
+  }
+
+  .banner:not(.banner--mobile-bottom) .banner__box {
+    padding-bottom: calc(4rem - 15px);
+  }
+
   .banner:not(.banner--mobile-bottom) .field__input,
   .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-scheme-1 {
     background: transparent;
