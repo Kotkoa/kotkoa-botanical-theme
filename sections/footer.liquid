@@ -19,22 +19,6 @@
     border-top: 0;
   }
 
-  .footer__policies-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .footer__studio-credit {
-    padding: 0.4rem 0.8rem;
-    border: 0.1rem solid rgba(var(--color-foreground), 0.2);
-    font-size: 1.2rem;
-    white-space: nowrap;
-  }
-
   .footer-block--newsletter .footer-block__heading {
     font-family: var(--font-body-family);
     font-size: 1.4rem;
@@ -285,32 +269,30 @@
         </small>
         <small class="copyright__content">{{ powered_by_link }}</small>
         {%- if section.settings.show_policy or section.settings.studio_credit_text != blank -%}
-          <div class="footer__policies-row">
-            <ul class="policies list-unstyled">
-              {%- if section.settings.show_policy -%}
-                {%- for policy in shop.policies -%}
-                  {%- if policy != blank -%}
-                    <li>
-                      <small class="copyright__content"
-                        ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
-                      >
-                    </li>
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- endif -%}
-            </ul>
-            {%- if section.settings.studio_credit_text != blank -%}
-              <div class="footer__studio-credit">
-                {%- if section.settings.studio_credit_url != blank -%}
-                  <a href="{{ section.settings.studio_credit_url }}" class="link link--text">
-                    {{ section.settings.studio_credit_text | escape }}
-                  </a>
-                {%- else -%}
-                  {{ section.settings.studio_credit_text | escape }}
+          <ul class="policies list-unstyled">
+            {%- if section.settings.show_policy -%}
+              {%- for policy in shop.policies -%}
+                {%- if policy != blank -%}
+                  <li>
+                    <small class="copyright__content"
+                      ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
+                    >
+                  </li>
                 {%- endif -%}
-              </div>
+              {%- endfor -%}
             {%- endif -%}
-          </div>
+            {%- if section.settings.studio_credit_text != blank -%}
+              <li>
+                <small class="copyright__content">
+                  {%- if section.settings.studio_credit_url != blank -%}
+                    <a href="{{ section.settings.studio_credit_url }}">{{ section.settings.studio_credit_text | escape }}</a>
+                  {%- else -%}
+                    {{ section.settings.studio_credit_text | escape }}
+                  {%- endif -%}
+                </small>
+              </li>
+            {%- endif -%}
+          </ul>
         {%- endif -%}
       </div>
       {% render 'footer-newsletter', section: section %}
