@@ -1188,6 +1188,12 @@
           "label": "Policy links",
           "info": "[Manage policies](/admin/settings/legal)"
         },
+        "studio_credit_text": {
+          "label": "Studio credit text"
+        },
+        "studio_credit_url": {
+          "label": "Studio credit link"
+        },
         "margin_top": {
           "label": "Top margin"
         },
