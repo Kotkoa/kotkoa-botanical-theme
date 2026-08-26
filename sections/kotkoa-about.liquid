@@ -47,7 +47,7 @@
     border: 1px solid rgb(var(--color-foreground) / 0.18);
     border-radius: 4.8rem 4.8rem 4.8rem 9rem;
     background: rgb(var(--color-foreground) / 0.08);
-    box-shadow: 2.4rem 2.4rem 0 rgb(110 102 82 / 0.32);
+    box-shadow: 2.4rem 2.4rem 0 rgb(var(--color-button) / 0.32);
   }
 
   .kotkoa-about__portrait::after {
@@ -135,17 +135,17 @@
     display: inline-block;
     margin-top: 1.6rem;
     padding: 1.4rem 2.1rem;
-    border: 1px solid #6e6652;
-    background: #6e6652;
-    color: #fff;
+    border: 1px solid rgb(var(--color-button));
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
     text-decoration: none;
     transition: background-color 160ms ease, border-color 160ms ease;
   }
 
   .kotkoa-about__link:hover {
-    border-color: #4f4939;
-    background: #4f4939;
-    color: #fff;
+    border-color: color-mix(in srgb, rgb(var(--color-button)) 82%, black);
+    background: color-mix(in srgb, rgb(var(--color-button)) 82%, black);
+    color: rgb(var(--color-button-text));
   }
 
   @media screen and (max-width: 989px) {

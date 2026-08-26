@@ -453,6 +453,7 @@
         "accent_text": { "label": "Accent text" },
         "description": { "label": "Description" },
         "color_scheme": { "label": "Color scheme" },
+        "content_color": { "label": "Content color" },
         "padding_top": { "label": "Top padding" },
         "padding_bottom": { "label": "Bottom padding" }
       }
@@ -463,6 +464,7 @@
         "heading": { "label": "Heading" },
         "subheading": { "label": "Subheading" },
         "color_scheme": { "label": "Color scheme" },
+        "panel_background": { "label": "Panel background" },
         "padding_top": { "label": "Top padding" },
         "padding_bottom": { "label": "Bottom padding" }
       },

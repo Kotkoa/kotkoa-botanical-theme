@@ -1,4 +1,4 @@
-<section class="seasonal-collections color-{{ section.settings.color_scheme }} gradient" style="--seasonal-collections-padding-top: {{ section.settings.padding_top }}px; --seasonal-collections-padding-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+<section class="seasonal-collections color-{{ section.settings.color_scheme }} gradient" style="--seasonal-collections-padding-top: {{ section.settings.padding_top }}px; --seasonal-collections-padding-bottom: {{ section.settings.padding_bottom }}px; --seasonal-collections-panel-background: {{ section.settings.panel_background }};" {{ section.shopify_attributes }}>
   <div class="page-width">
     <div class="seasonal-collections__panel">
       {% if section.settings.heading != blank %}
@@ -63,7 +63,7 @@
   .seasonal-collections__panel {
     padding: 1.2rem 2rem 1.6rem;
     border-radius: 8px;
-    background: #d1d0b1;
+    background: var(--seasonal-collections-panel-background);
   }
 
   .seasonal-collections__heading {
@@ -163,6 +163,7 @@
     { "type": "text", "id": "heading", "label": "t:sections.seasonal_collections.settings.heading.label", "default": "Seasonal collections" },
     { "type": "text", "id": "subheading", "label": "t:sections.seasonal_collections.settings.subheading.label", "default": "Celebrate every season with botanical charm" },
     { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.seasonal_collections.settings.color_scheme.label", "default": "scheme-1" },
+    { "type": "color", "id": "panel_background", "label": "t:sections.seasonal_collections.settings.panel_background.label", "default": "#d1d0b1" },
     { "type": "range", "id": "padding_top", "label": "t:sections.seasonal_collections.settings.padding_top.label", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 32 },
     { "type": "range", "id": "padding_bottom", "label": "t:sections.seasonal_collections.settings.padding_bottom.label", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 32 }
   ],

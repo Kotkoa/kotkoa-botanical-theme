@@ -1,6 +1,6 @@
 <section
   class="digital-collections color-{{ section.settings.color_scheme }} gradient"
-  style="--digital-collections-padding-top: {{ section.settings.padding_top }}px; --digital-collections-padding-bottom: {{ section.settings.padding_bottom }}px; --digital-collections-image-ratio: {{ section.settings.image.aspect_ratio | default: 3.186 }}; --digital-collections-image-position: {{ section.settings.image_position }};"
+  style="--digital-collections-padding-top: {{ section.settings.padding_top }}px; --digital-collections-padding-bottom: {{ section.settings.padding_bottom }}px; --digital-collections-image-ratio: {{ section.settings.image.aspect_ratio | default: 3.186 }}; --digital-collections-image-position: {{ section.settings.image_position }}; --digital-collections-content-color: {{ section.settings.content_color }};"
   {{ section.shopify_attributes }}
 >
   <div class="page-width">
@@ -11,14 +11,14 @@
     {% endif %}
       <div class="digital-collections__media" aria-hidden="true">
         {% if section.settings.image != blank %}
-          {{ section.settings.image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '750, 1100, 1500, 1800, 2205, 2400', sizes: '(min-width: 1300px) 1200px, calc(100vw - 3rem)', alt: '' }}
+          {{ section.settings.image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '750, 1100, 1500, 1800, 2205, 2400', sizes: '(min-width: 1300px) 1200px, calc(100vw - 3rem)', alt: section.settings.image.alt | default: section.settings.heading }}
         {% else %}
           <img
             src="{{ 'digital-collections-banner.jpg' | asset_url }}"
             width="2205"
             height="692"
             loading="lazy"
-            alt=""
+            alt="{{ section.settings.heading | escape }}"
           >
         {% endif %}
       </div>
@@ -65,7 +65,7 @@
     overflow: hidden;
     border-radius: 1rem;
     aspect-ratio: var(--digital-collections-image-ratio);
-    color: #000000;
+    color: var(--digital-collections-content-color);
     text-decoration: none;
     isolation: isolate;
   }
@@ -128,7 +128,7 @@
 
   .digital-collections__heading {
     margin: 0;
-    color: #000000;
+    color: var(--digital-collections-content-color);
     font-family: var(--font-heading-family);
     font-size: clamp(4rem, 5vw, 7rem);
     font-style: var(--font-heading-style);
@@ -140,7 +140,7 @@
 
   .digital-collections__accent {
     margin: 0.2rem 0 1.4rem;
-    color: #000000;
+    color: var(--digital-collections-content-color);
     font-family: 'Snell Roundhand', 'Segoe Script', 'Brush Script MT', cursive;
     font-size: clamp(3rem, 3.8vw, 5.2rem);
     font-weight: 400;
@@ -311,6 +311,7 @@
     { "type": "text", "id": "heading", "label": "t:sections.digital_collections.settings.heading.label", "default": "Botanical art" },
     { "type": "text", "id": "accent_text", "label": "t:sections.digital_collections.settings.accent_text.label", "default": "for every season" },
     { "type": "textarea", "id": "description", "label": "t:sections.digital_collections.settings.description.label", "default": "Beautiful botanical illustrations for your creative projects — instant download, print and enjoy." },
+    { "type": "color", "id": "content_color", "label": "t:sections.digital_collections.settings.content_color.label", "default": "#000000" },
     { "type": "color_scheme", "id": "color_scheme", "label": "t:sections.digital_collections.settings.color_scheme.label", "default": "scheme-1" },
     { "type": "range", "id": "padding_top", "label": "t:sections.digital_collections.settings.padding_top.label", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 16 },
     { "type": "range", "id": "padding_bottom", "label": "t:sections.digital_collections.settings.padding_bottom.label", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 32 }
