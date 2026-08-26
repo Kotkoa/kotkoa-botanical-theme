@@ -225,7 +225,8 @@
     "seasonal_collections": {
       "type": "kotkoa-digital-collections",
       "settings": {
-        "image": "shopify://shop_images/c24dca61-a730-42___83-84ed-b4c3d13e348f.jpg",
+        "image": "shopify://shop_images/Digital_collections_banner.jpg",
+        "image_position": "center",
         "link": "shopify://collections/botanical-clipart-photo-collections",
         "eyebrow": "Digital collections",
         "heading": "Botanical art",

@@ -1,4 +1,4 @@
-<section class="kotkoa-about color-{{ section.settings.color_scheme }} gradient" {{ section.shopify_attributes }}>
+<section class="kotkoa-about color-{{ section.settings.color_scheme | default: 'scheme-1' }} gradient" {{ section.shopify_attributes }}>
   <div class="kotkoa-about__inner page-width">
     <div class="kotkoa-about__portrait">
       {% if section.settings.image != blank %}
